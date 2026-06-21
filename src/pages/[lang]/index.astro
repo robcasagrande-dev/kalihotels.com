@@ -88,13 +88,13 @@ const schema = {
   <!-- Essence Section -->
   <section class="essence-section container">
     <div class="essence-grid">
-      <div class="essence-text-block">
+      <div class="essence-text-block reveal-on-scroll">
         <h2 class="section-title">{t.essence.title}</h2>
         <p class="essence-p">{t.essence.p1}</p>
         <p class="essence-p">{t.essence.p2}</p>
       </div>
 
-      <div class="essence-media-block">
+      <div class="essence-media-block reveal-on-scroll" style="transition-delay: 0.2s;">
         <div class="collage-container">
           <img src="https://kalihotels.com/wp-content/uploads/layerslider/projects/Casa-de-Leda-Gallery/casa-de-leda-03-1024x585.jpg" alt="Casa de Leda Roman Spa" class="collage-img img-1 glass" />
           <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-33-683x1024.jpg" alt="Casa de Isabella Pool" class="collage-img img-2 glass" />
@@ -106,7 +106,7 @@ const schema = {
 
   <!-- Santuarios Section -->
   <section id="santuarios" class="santuarios-section">
-    <div class="container text-center">
+    <div class="container text-center reveal-on-scroll">
       <span class="section-tag">{t.santuarios.title}</span>
       <h2 class="section-title mb-4">{t.santuarios.subtitle}</h2>
       <p class="santuarios-intro">{t.santuarios.description}</p>
@@ -115,7 +115,7 @@ const schema = {
     <!-- Properties Showcase -->
     <div class="container properties-grid">
       <!-- Casa Leda -->
-      <article id="leda" class="property-card glass">
+      <article id="leda" class="property-card glass reveal-on-scroll" style="transition-delay: 0s;">
         <div class="property-image-wrapper">
           <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg" alt="Casa de Leda" class="property-image" />
           <div class="property-overlay"></div>
@@ -128,7 +128,7 @@ const schema = {
       </article>
 
       <!-- Casa Isabella -->
-      <article id="isabella" class="property-card glass">
+      <article id="isabella" class="property-card glass reveal-on-scroll" style="transition-delay: 0.15s;">
         <div class="property-image-wrapper">
           <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-03-1024x683.jpg" alt="Casa de Isabella" class="property-image" />
           <div class="property-overlay"></div>
@@ -141,7 +141,7 @@ const schema = {
       </article>
 
       <!-- Villa Maria -->
-      <article id="maria" class="property-card glass">
+      <article id="maria" class="property-card glass reveal-on-scroll" style="transition-delay: 0.3s;">
         <div class="property-image-wrapper">
           <img src="https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-16-1024x585.jpg" alt="Villa Maria" class="property-image" />
           <div class="property-overlay"></div>
@@ -263,11 +263,15 @@ const schema = {
   }
 
   @keyframes rotateWords {
-    0%, 20% { transform: translateY(0); }
-    25%, 45% { transform: translateY(-2.5rem); }
-    50%, 70% { transform: translateY(-5rem); }
-    75%, 95% { transform: translateY(-7.5rem); }
-    100% { transform: translateY(0); }
+    0%, 20% { transform: translateY(0); filter: blur(0); opacity: 1; }
+    22% { filter: blur(2px); opacity: 0.7; }
+    25%, 45% { transform: translateY(-2.5rem); filter: blur(0); opacity: 1; }
+    47% { filter: blur(2px); opacity: 0.7; }
+    50%, 70% { transform: translateY(-5rem); filter: blur(0); opacity: 1; }
+    72% { filter: blur(2px); opacity: 0.7; }
+    75%, 95% { transform: translateY(-7.5rem); filter: blur(0); opacity: 1; }
+    97% { filter: blur(2px); opacity: 0.7; }
+    100% { transform: translateY(0); filter: blur(0); opacity: 1; }
   }
 
   .hero-title {
@@ -447,7 +451,12 @@ const schema = {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 40%, rgba(7, 8, 10, 0.9) 100%);
+    background: linear-gradient(to bottom, transparent 40%, rgba(7, 8, 10, 0.6) 100%);
+    transition: var(--transition-smooth);
+  }
+
+  .property-card:hover .property-overlay {
+    background: linear-gradient(to bottom, transparent 20%, rgba(7, 8, 10, 0.95) 100%);
   }
 
   .property-info {
@@ -475,6 +484,14 @@ const schema = {
     padding: 0.6rem 1.2rem;
     font-size: 0.8rem;
     width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition-smooth);
+  }
+
+  .property-card:hover .property-btn {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Booking Callout */

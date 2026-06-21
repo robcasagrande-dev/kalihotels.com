@@ -35,6 +35,7 @@ const alternates = [
   { lang: 'es', href: `${origin}/es/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'en', href: `${origin}/en/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'it', href: `${origin}/it/${innerPath ? innerPath + '/' : ''}` },
+  { lang: 'fr', href: `${origin}/fr/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'x-default', href: `${origin}/es/${innerPath ? innerPath + '/' : ''}` }
 ];
 ---
@@ -89,6 +90,27 @@ const alternates = [
       <slot />
       <Footer lang={lang} />
     </div>
+    <script>
+      // Intersection Observer for scroll animations
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              // Optional: Stop observing once visible
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1, // Trigger when 10% of the element is visible
+          rootMargin: "0px 0px -50px 0px"
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
   </body>
 </html>
 

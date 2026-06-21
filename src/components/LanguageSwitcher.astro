@@ -5,13 +5,14 @@ const pathname = Astro.url.pathname;
 const languages = [
   { code: 'es', label: 'ES' },
   { code: 'en', label: 'EN' },
-  { code: 'it', label: 'IT' }
+  { code: 'it', label: 'IT' },
+  { code: 'fr', label: 'FR' }
 ];
 
 function getLangPath(newLang) {
   const segments = pathname.split('/').filter(Boolean);
   if (segments.length === 0) return `/${newLang}/`;
-  if (['es', 'en', 'it'].includes(segments[0])) {
+  if (['es', 'en', 'it', 'fr'].includes(segments[0])) {
     segments[0] = newLang;
   } else {
     segments.unshift(newLang);
