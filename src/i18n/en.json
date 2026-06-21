@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "villa_maria": "Villa Maria Tayrona",
+    "casa_leda": "Casa de Leda",
+    "casa_isabella": "Casa de Isabella",
+    "book": "Book Now"
+  },
+  "hero": {
+    "santuarios": ["Paradises", "Sanctuaries", "Jewels", "Temples"],
+    "title": "The Essence of Santa Marta",
+    "subtitle": "Kali Hotels transcends conventional hospitality.",
+    "cta": "Book Here"
+  },
+  "essence": {
+    "title": "The Caribbean, Deciphered by Kali.",
+    "p1": "Three architectural gems in the heart of Santa Marta's Historic Center. Stays designed to immerse yourself in the vibrant energy of the urban Caribbean.",
+    "p2": "History or nature. Excitement or calm. With Kali Hotels, you do not have to choose. You only have to decide how you want your story to begin."
+  },
+  "santuarios": {
+    "title": "Your private sanctuary.",
+    "subtitle": "Discover Our Sanctuaries",
+    "description": "At Kali Hotels, we invite you to experience our three unique destinations: the Historic Center and Tayrona Park. Each of our hotels is an exclusive sanctuary with a distinct essence, innovative experiences, and its own charm, making them completely unique. Explore this section and discover where your next unforgettable experience begins.",
+    "explore": "Explore More",
+    "leda_desc": "A historic gem in Santa Marta featuring a luxury Roman spa.",
+    "isabella_desc": "Colonial charm fused with modern luxury.",
+    "maria_desc": "Untamed nature at the doorstep of Tayrona National Park."
+  },
+  "booking": {
+    "title": "Book direct. Save more!",
+    "check_in": "Check-in",
+    "check_out": "Check-out",
+    "guests": "Guests",
+    "select_hotel": "Select Hotel",
+    "all_hotels": "All Hotels",
+    "search": "Check Availability"
+  },
+  "properties": {
+    "villa_maria": {
+      "title": "Villa Maria Tayrona",
+      "subtitle": "Untamed nature at the doorstep of Tayrona National Park",
+      "paragraphs": [
+        "Villa Maria by Kali Hotels is a jungle retreat 40 minutes from the Old City of Santa Marta and just 3 kilometers from the main entrance to Tayrona National Park. You not only have panoramic views of the Caribbean Sea, but you can also ponder the glaciers atop the Sierra Nevada de Santa Marta – the world’s highest coastal mountain range. You can relax at the pool or take a short walk through our tranquil avocado farm brings you solitude at an unspoiled, white sand beach.",
+        "Attended by 24-hour staff, Villa Maria provides daily maid service, complimentary hot breakfast, and rooms with air conditioning and hot water. An on-site restaurant at the hotel allows guests to dine in the restaurant without having to drive.",
+        "The Villa Maria experience is the perfect addition to your Santa Marta vacation. Local attractions include the Valencia Waterfall, the trek to the Lost City, and the Orinoco. Sunbathing, swimming, or walking the grounds will make you cherish every moment."
+      ]
+    },
+    "casa_leda": {
+      "title": "Casa de Leda",
+      "subtitle": "A historic gem in Santa Marta's Historic Center",
+      "paragraphs": [
+        "A full-service boutique hotel and spa in the Centro Historico. Spacious rooms under vaulted ceilings give way to open bathrooms with plenty of natural light. The open terrace, flanked by cascades of green vines, overlooks the Santa Marta Cathedral.",
+        "With panoramic city views, an indoor and outdoor pool, a steam bath, and a spa, this boutique hotel has it all. Guests praise the architecture, the location, and the friendly staff.",
+        "Our hotel offers plenty of opportunities to relax. Take a steam bath at the SPA, soak in the sun at the rooftop pool, and relax with a drink on the main terrace with a magnificent view of the old Cathedral.",
+        "In 2014 Casa de Leda was declared the best small hotel in Colombia by booking.com – The Booking Truth. The hotel has also won several awards in Trip Advisor every year since its opening.",
+        "Just a short walk from Parque de Los Novios nightlife and the new Marina, Casa de Leda offers an ideal location far from the crowd but close enough to be anywhere in a minute."
+      ]
+    },
+    "casa_isabella": {
+      "title": "Casa de Isabella",
+      "subtitle": "Colonial charm fused with modern luxury",
+      "paragraphs": [
+        "The hotel is in the Centro Historico and pays homage to the charm and history of the town. Our guests feel the simplicity of Santa Marta’s natural charm while enjoying modern comforts. From the greenery of the courtyard to the intimacy of a private rooftop pool, Casa de Isabella fuses the tranquility of Colombian culture with top-quality hotel conveniences.",
+        "In designing the hotel, we consistently chose a classic style, maintaining the original integrity of the building and its surrounding neighborhood. Our guests feel the simplicity of Santa Marta’s natural charm while enjoying modern comforts.",
+        "Our hotel offers plenty of opportunities to relax. Soak in the sun at our plunge pool or your private rooftop pool, take a stroll in Centro, or enjoy a meal at the numerous restaurants nearby.",
+        "Just a block from Parque de Los Novios nightlife and the new Marina, it offers an ideal location far from noise but close enough to be anywhere in a minute.",
+        "Our hotel is every year Certificate of Excellence and the Traveler’s choice winner. Visit us here in Colombia and experience why!"
+      ]
+    },
+    "contact_info": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "follow_us": "Follow Us"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 Kali Hotels. All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "Kali Hotels | Boutique Hotels in Santa Marta & Tayrona, Colombia",
+      "description": "Discover Kali Hotels in Santa Marta & Tayrona, Colombia. Three exclusive luxury boutique sanctuaries in the Historic Center and next to Tayrona National Park."
+    },
+    "villa_maria": {
+      "title": "Villa Maria Tayrona | Eco-Luxury Jungle Retreat | Kali Hotels",
+      "description": "Book your stay at Villa Maria Tayrona by Kali Hotels. A luxury jungle eco-retreat next to Tayrona National Park with ocean views and private bungalows."
+    },
+    "casa_leda": {
+      "title": "Casa de Leda | Boutique Hotel & Roman Spa in Santa Marta | Kali Hotels",
+      "description": "Stay at Casa de Leda by Kali Hotels. A historic boutique hotel in Santa Marta's Historic Center with a subterranean Roman spa, rooftop bar, and pool."
+    },
+    "casa_isabella": {
+      "title": "Casa de Isabella | Colonial Boutique Hotel in Santa Marta | Kali Hotels",
+      "description": "Book at Casa de Isabella by Kali Hotels. A premium colonial boutique hotel in the Historic Center of Santa Marta featuring a private plunge pool."
+    }
+  }
+}

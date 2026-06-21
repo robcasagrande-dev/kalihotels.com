@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslations, LANGUAGES } from '../../utils/i18n.js';
+import Gallery from '../../components/Gallery.astro';
+
+export function getStaticPaths() {
+  return LANGUAGES.map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+
+const galleryImages = [
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-01.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-02.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-03.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-04.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-05.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-06.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-07.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-08.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-09.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-10.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-11.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-12.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-13.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-14.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-15.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-16.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-17.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-18.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-19.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-20.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-21.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-22.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-23.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-24.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-25.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-26.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-27.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-28.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-29.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-30.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-31.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-32.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-33.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-34.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-35.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-36.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-37.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-38.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-39.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-40.jpg"
+];
+
+// Construct JSON-LD Structured Data
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Villa María Tayrona",
+  "description": t.seo.villa_maria.description,
+  "url": `https://kalihotels.com/${lang}/villa-maria/`,
+  "image": "https://kalihotels.com/wp-content/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg",
+  "telephone": "+57 300 123 4567",
+  "email": "villamaria@kalihotels.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Km 35 Troncal del Caribe",
+    "addressLocality": "Tayrona",
+    "addressRegion": "Magdalena",
+    "addressCountry": "CO"
+  },
+  "priceRange": "$$$",
+  "starRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5"
+  }
+};
+---
+
+<BaseLayout 
+  title={t.seo.villa_maria.title} 
+  description={t.seo.villa_maria.description} 
+  lang={lang} 
+  ogImage="https://kalihotels.com/wp-content/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg"
+  ogType="website"
+  schema={schema}
+>
+  <!-- Property Hero -->
+  <section class="property-hero">
+    <div class="hero-overlay"></div>
+    <img src="https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-16-1024x585.jpg" alt="Villa Maria Tayrona Banner" class="hero-img" />
+    <div class="hero-text container text-center">
+      <h1 class="property-title">{t.properties.villa_maria.title}</h1>
+      <p class="property-subtitle">{t.properties.villa_maria.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Main Info Block -->
+  <section class="property-details container">
+    <div class="details-grid">
+      <div class="details-text">
+        <h2 class="section-title">The Sanctuary</h2>
+        {t.properties.villa_maria.paragraphs.map(p => (
+          <p class="desc-p">{p}</p>
+        ))}
+        
+        <div class="quick-facts">
+          <div class="fact-item">
+            <strong>Location:</strong>
+            <span>Km 35 Vía Riohacha, Tayrona Park</span>
+          </div>
+          <div class="fact-item">
+            <strong>Atmosphere:</strong>
+            <span>Jungle Eco-Luxury & Sea Views</span>
+          </div>
+          <div class="fact-item">
+            <strong>Highlights:</strong>
+            <span>Outdoor Jacuzzis, Wildlife Spotting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="details-sidebar glass">
+        <h3>{t.booking.title}</h3>
+        <p>Book directly with us to get access to exclusive room options and benefits.</p>
+        <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791&h=maria" target="_blank" rel="noopener noreferrer" class="btn-gold booking-btn">
+          {t.booking.search}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="property-gallery container">
+    <h2 class="section-title text-center mb-5">Gallery</h2>
+    <Gallery images={galleryImages} />
+  </section>
+
+  <!-- Contact & Info -->
+  <section class="property-contact container">
+    <div class="contact-grid glass">
+      <div class="contact-item">
+        <h4>{t.properties.contact_info.phone}</h4>
+        <p>+57 300 123 4567</p>
+      </div>
+      <div class="contact-item">
+        <h4>{t.properties.contact_info.email}</h4>
+        <p><a href="mailto:villamaria@kalihotels.com">villamaria@kalihotels.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>{t.properties.contact_info.address}</h4>
+        <p>Km 35 Troncal del Caribe, Tayrona, Colombia</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .property-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 12, 16, 0.4) 0%, rgba(11, 12, 16, 0.85) 100%);
+    z-index: 2;
+  }
+
+  .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 3;
+    padding-top: 80px;
+  }
+
+  .property-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .property-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mb-5 {
+    margin-bottom: 3rem;
+  }
+
+  /* Details Grid */
+  .property-details {
+    padding: 6rem 2rem;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .details-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .desc-p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .quick-facts {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .fact-item {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .fact-item strong {
+    width: 120px;
+    color: var(--color-gold);
+    flex-shrink: 0;
+  }
+
+  .fact-item span {
+    color: var(--text-main);
+  }
+
+  .details-sidebar {
+    padding: 2.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .details-sidebar h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+  }
+
+  .details-sidebar p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .booking-btn {
+    width: 100%;
+    height: 48px;
+  }
+
+  /* Gallery Section */
+  .property-gallery {
+    padding: 2rem 2rem 6rem 2rem;
+  }
+
+  /* Contact Section */
+  .property-contact {
+    padding: 2rem 2rem 8rem 2rem;
+  }
+
+  .contact-grid {
+    padding: 2.5rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact-item h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-item p {
+    color: var(--text-main);
+    font-size: 0.95rem;
+  }
+
+  .contact-item a {
+    color: var(--text-main);
+    transition: var(--transition-fast);
+  }
+
+  .contact-item a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 900px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

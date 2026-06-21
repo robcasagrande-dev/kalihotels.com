@@ -1,0 +1,216 @@
+---
+import { getTranslations } from '../utils/i18n.js';
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+<div class="booking-widget-container">
+  <div class="booking-widget glass animate-fade-in-up">
+    <form id="booking-form" class="booking-form">
+      <div class="form-group">
+        <label for="hotel-select">{t.booking.select_hotel}</label>
+        <select id="hotel-select" name="hotel" class="input-field select-field">
+          <option value="all">{t.booking.all_hotels}</option>
+          <option value="maria">{t.nav.villa_maria}</option>
+          <option value="leda">{t.nav.casa_leda}</option>
+          <option value="isabella">{t.nav.casa_isabella}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="check-in">{t.booking.check_in}</label>
+        <input type="date" id="check-in" name="checkIn" class="input-field date-field" required />
+      </div>
+
+      <div class="form-group">
+        <label for="check-out">{t.booking.check_out}</label>
+        <input type="date" id="check-out" name="checkOut" class="input-field date-field" required />
+      </div>
+
+      <div class="form-group">
+        <label for="guests">{t.booking.guests}</label>
+        <select id="guests" name="guests" class="input-field select-field">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-gold submit-btn">
+        {t.booking.search}
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  import { redirectToBooking } from '../scripts/zak-integration.js';
+
+  // Set default dates on load (tomorrow and day after tomorrow)
+  const checkInInput = document.getElementById('check-in') as HTMLInputElement;
+  const checkOutInput = document.getElementById('check-out') as HTMLInputElement;
+
+  if (checkInInput && checkOutInput) {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const dayAfter = new Date(today);
+    dayAfter.setDate(dayAfter.getDate() + 2);
+
+    // Format to YYYY-MM-DD
+    const formatDate = (date: Date) => {
+      const d = String(date.getDate()).padStart(2, '0');
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const y = date.getFullYear();
+      return `${y}-${m}-${d}`;
+    };
+
+    checkInInput.value = formatDate(tomorrow);
+    checkInInput.min = formatDate(today);
+    checkOutInput.value = formatDate(dayAfter);
+    
+    // Dynamically adjust check-out min date based on check-in
+    checkInInput.addEventListener('change', () => {
+      const selectedCheckIn = new Date(checkInInput.value);
+      const nextDay = new Date(selectedCheckIn);
+      nextDay.setDate(nextDay.getDate() + 1);
+      checkOutInput.min = formatDate(nextDay);
+      if (new Date(checkOutInput.value) <= selectedCheckIn) {
+        checkOutInput.value = formatDate(nextDay);
+      }
+    });
+  }
+
+  // Intercept form submit and redirect
+  const form = document.getElementById('booking-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form as HTMLFormElement);
+      const hotel = formData.get('hotel') as string;
+      const checkIn = formData.get('checkIn') as string;
+      const checkOut = formData.get('checkOut') as string;
+      const guests = formData.get('guests') as string;
+
+      const finalUrl = redirectToBooking({
+        checkIn,
+        checkOut,
+        guests: parseInt(guests, 10),
+        hotel
+      });
+
+      // Redirect user to WuBook booking engine
+      window.open(finalUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
+</script>
+
+<style>
+  .booking-widget-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .booking-widget {
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-top: -50px; /* Offset over hero boundary */
+  }
+
+  .booking-form {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 0.8fr 1.2fr;
+    gap: 1.5rem;
+    align-items: flex-end;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .input-field {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: var(--transition-fast);
+    outline: none;
+  }
+
+  .input-field:focus {
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(155, 23, 107, 0.25);
+  }
+
+  .select-field {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239fa4b0' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  /* Style select dropdown options for dark theme support */
+  .select-field option {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+  }
+
+  .date-field {
+    cursor: text;
+  }
+
+  /* Custom styling for calendar icon */
+  .date-field::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: var(--transition-fast);
+  }
+
+  .date-field::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+  }
+
+  .submit-btn {
+    width: 100%;
+    height: 48px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .booking-form {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+    
+    .booking-widget {
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,544 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingWidget from '../../components/BookingWidget.astro';
+import { getTranslations, LANGUAGES } from '../../utils/i18n.js';
+
+export function getStaticPaths() {
+  return LANGUAGES.map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+
+// Construct JSON-LD Structured Data
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `https://kalihotels.com/${lang}/#website`,
+      "url": `https://kalihotels.com/${lang}/`,
+      "name": "Kali Hotels",
+      "description": t.seo.home.description,
+      "publisher": {
+        "@id": "https://kalihotels.com/#organization"
+      },
+      "inLanguage": lang
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://kalihotels.com/#organization",
+      "name": "Kali Hotels",
+      "url": "https://kalihotels.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://kalihotels.com/#logo",
+        "url": "https://kalihotels.com/wp-content/uploads/2023/08/cropped-favicon-192x192.png",
+        "caption": "Kali Hotels"
+      },
+      "sameAs": [
+        "https://www.instagram.com/kalihotels",
+        "https://www.facebook.com/kalihotels"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "reservations",
+        "email": "info@kalihotels.com"
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={t.seo.home.title} 
+  description={t.seo.home.description} 
+  lang={lang} 
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="video-overlay"></div>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://kalihotels.com/wp-content/uploads/2025/10/copy_580F2DEF-D612-476E-8A92-98975BC9805F-1.mov" type="video/mp4" />
+      <!-- Fallback image in case video fails to load -->
+      <div class="video-fallback"></div>
+    </video>
+
+    <div class="hero-content container">
+      <div class="word-rotator">
+        <span class="prefix">3</span>
+        <div class="rotator-wrapper">
+          {t.hero.santuarios.map((word, idx) => (
+            <span class={`rotator-item rotator-item-${idx}`}>{word}</span>
+          ))}
+        </div>
+      </div>
+      <h1 class="hero-title">{t.hero.title}</h1>
+      <p class="hero-subtitle">{t.hero.subtitle}</p>
+      <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791" target="_blank" rel="noopener noreferrer" class="btn-gold hero-cta">
+        {t.hero.cta}
+      </a>
+    </div>
+  </section>
+
+  <!-- Booking Widget Section -->
+  <BookingWidget lang={lang} />
+
+  <!-- Essence Section -->
+  <section class="essence-section container">
+    <div class="essence-grid">
+      <div class="essence-text-block">
+        <h2 class="section-title">{t.essence.title}</h2>
+        <p class="essence-p">{t.essence.p1}</p>
+        <p class="essence-p">{t.essence.p2}</p>
+      </div>
+
+      <div class="essence-media-block">
+        <div class="collage-container">
+          <img src="https://kalihotels.com/wp-content/uploads/layerslider/projects/Casa-de-Leda-Gallery/casa-de-leda-03-1024x585.jpg" alt="Casa de Leda Roman Spa" class="collage-img img-1 glass" />
+          <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-33-683x1024.jpg" alt="Casa de Isabella Pool" class="collage-img img-2 glass" />
+          <img src="https://kalihotels.com/wp-content/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg" alt="Villa Maria Aerial View" class="collage-img img-3 glass" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Santuarios Section -->
+  <section id="santuarios" class="santuarios-section">
+    <div class="container text-center">
+      <span class="section-tag">{t.santuarios.title}</span>
+      <h2 class="section-title mb-4">{t.santuarios.subtitle}</h2>
+      <p class="santuarios-intro">{t.santuarios.description}</p>
+    </div>
+
+    <!-- Properties Showcase -->
+    <div class="container properties-grid">
+      <!-- Casa Leda -->
+      <article id="leda" class="property-card glass">
+        <div class="property-image-wrapper">
+          <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg" alt="Casa de Leda" class="property-image" />
+          <div class="property-overlay"></div>
+        </div>
+        <div class="property-info">
+          <h3 class="property-name">{t.nav.casa_leda}</h3>
+          <p class="property-desc">{t.santuarios.leda_desc}</p>
+          <a href={`/${lang}/casa-leda/`} class="btn-ghost property-btn">{t.santuarios.explore}</a>
+        </div>
+      </article>
+
+      <!-- Casa Isabella -->
+      <article id="isabella" class="property-card glass">
+        <div class="property-image-wrapper">
+          <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-03-1024x683.jpg" alt="Casa de Isabella" class="property-image" />
+          <div class="property-overlay"></div>
+        </div>
+        <div class="property-info">
+          <h3 class="property-name">{t.nav.casa_isabella}</h3>
+          <p class="property-desc">{t.santuarios.isabella_desc}</p>
+          <a href={`/${lang}/casa-isabella/`} class="btn-ghost property-btn">{t.santuarios.explore}</a>
+        </div>
+      </article>
+
+      <!-- Villa Maria -->
+      <article id="maria" class="property-card glass">
+        <div class="property-image-wrapper">
+          <img src="https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-16-1024x585.jpg" alt="Villa Maria" class="property-image" />
+          <div class="property-overlay"></div>
+        </div>
+        <div class="property-info">
+          <h3 class="property-name">{t.nav.villa_maria}</h3>
+          <p class="property-desc">{t.santuarios.maria_desc}</p>
+          <a href={`/${lang}/villa-maria/`} class="btn-ghost property-btn">{t.santuarios.explore}</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Booking Callout -->
+  <section class="booking-callout">
+    <div class="callout-overlay"></div>
+    <div class="container callout-content">
+      <h2 class="callout-title">{t.booking.title}</h2>
+      <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791" target="_blank" rel="noopener noreferrer" class="btn-gold callout-btn">
+        {t.hero.cta}
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 12, 16, 0.4) 0%, rgba(11, 12, 16, 0.85) 100%);
+    z-index: 2;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .video-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    padding-top: 80px; /* Header spacing */
+  }
+
+  /* Word Rotator Animation */
+  .word-rotator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+  }
+
+  .prefix {
+    margin-right: 0.8rem;
+    color: var(--text-main);
+  }
+
+  .rotator-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    align-self: flex-start;
+    flex-shrink: 0;
+    min-width: max-content;
+    animation: rotateWords 10s infinite cubic-bezier(0.85, 0, 0.15, 1);
+  }
+
+  .rotator-item {
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes rotateWords {
+    0%, 20% { transform: translateY(0); }
+    25%, 45% { transform: translateY(-2.5rem); }
+    50%, 70% { transform: translateY(-5rem); }
+    75%, 95% { transform: translateY(-7.5rem); }
+    100% { transform: translateY(0); }
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--text-main);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-cta {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* Essence Section */
+  .essence-section {
+    padding: 8rem 2rem;
+  }
+
+  .essence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .essence-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+
+  .section-title span {
+    color: var(--color-accent);
+  }
+
+  .essence-p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* Collage container for parallax effects */
+  .collage-container {
+    position: relative;
+    height: 480px;
+    width: 100%;
+  }
+
+  .collage-img {
+    position: absolute;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: var(--transition-smooth);
+  }
+
+  .collage-img:hover {
+    transform: scale(1.03) translateY(-5px);
+    z-index: 10;
+    box-shadow: 0 20px 45px rgba(155, 23, 107, 0.3);
+  }
+
+  .img-1 {
+    width: 70%;
+    height: 240px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .img-2 {
+    width: 45%;
+    height: 300px;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .img-3 {
+    width: 45%;
+    height: 200px;
+    bottom: 20px;
+    left: 10%;
+    z-index: 2;
+  }
+
+  /* Santuarios Section */
+  .santuarios-section {
+    padding: 8rem 0;
+    background: linear-gradient(to bottom, #0b0c10 0%, #07080a 100%);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-tag {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+
+  .santuarios-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 5rem auto;
+    line-height: 1.8;
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .property-card {
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: var(--transition-smooth);
+  }
+
+  .property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(197, 168, 92, 0.3);
+  }
+
+  .property-image-wrapper {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+  }
+
+  .property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+  }
+
+  .property-card:hover .property-image {
+    transform: scale(1.05);
+  }
+
+  .property-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 40%, rgba(7, 8, 10, 0.9) 100%);
+  }
+
+  .property-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+  }
+
+  .property-name {
+    font-size: 1.5rem;
+    color: var(--text-main);
+  }
+
+  .property-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .property-btn {
+    align-self: flex-start;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  /* Booking Callout */
+  .booking-callout {
+    position: relative;
+    padding: 8rem 2rem;
+    background-image: url('https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-27-1024x683.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .callout-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 12, 16, 0.8);
+    z-index: 1;
+  }
+
+  .callout-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .callout-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--text-main);
+    line-height: 1.2;
+  }
+
+  .callout-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .properties-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .essence-grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    .collage-container {
+      height: 380px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+</style>

@@ -1,0 +1,324 @@
+---
+const { images = [] } = Astro.props;
+---
+
+<div class="gallery-wrapper">
+  <!-- Thumbnail Grid -->
+  <div class="gallery-grid">
+    {images.map((src, index) => (
+      <div class="gallery-item glass" data-index={index} data-src={src}>
+        <img src={src} alt={`Gallery image ${index + 1}`} class="gallery-thumb" loading="lazy" />
+        <div class="gallery-overlay">
+          <div class="zoom-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image gallery fullscreen viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    
+    <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Fullscreen image viewer" />
+      <span class="lightbox-counter" id="lightbox-counter"></span>
+    </div>
+    
+    <button class="lightbox-nav next" id="lightbox-next" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  // Locate components on the page
+  const items = document.querySelectorAll('.gallery-item');
+  const modal = document.getElementById('lightbox-modal');
+  const modalImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const counter = document.getElementById('lightbox-counter');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+  const imageUrls = Array.from(items).map(item => item.getAttribute('data-src') || '');
+
+  function openLightbox(index: number) {
+    if (!modal || !modalImg) return;
+    currentIndex = index;
+    updateLightbox();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Stop background scrolling
+  }
+
+  function closeLightbox() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore background scrolling
+  }
+
+  function updateLightbox() {
+    if (!modalImg || !counter) return;
+    
+    // Add fade out animation state
+    modalImg.style.opacity = '0';
+    modalImg.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+      modalImg.src = imageUrls[currentIndex];
+      counter.textContent = `${currentIndex + 1} / ${imageUrls.length}`;
+      
+      // Fade in and scale up the image smoothly
+      modalImg.onload = () => {
+        modalImg.style.opacity = '1';
+        modalImg.style.transform = 'scale(1)';
+      };
+    }, 150);
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % imageUrls.length;
+    updateLightbox();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+    updateLightbox();
+  }
+
+  // Event Listeners
+  items.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index));
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', prevImage);
+  if (nextBtn) nextBtn.addEventListener('click', nextImage);
+
+  // Close when clicking outside the image container
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target === document.querySelector('.lightbox-content')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (modal && modal.classList.contains('active')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    }
+  });
+</script>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+  }
+
+  .gallery-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 12, 16, 0.6);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    z-index: 2;
+  }
+
+  .zoom-icon {
+    color: var(--color-gold);
+    transform: scale(0.8);
+    transition: var(--transition-smooth);
+  }
+
+  /* Hover states */
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-gold);
+  }
+
+  .gallery-item:hover .gallery-thumb {
+    transform: scale(1.05);
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-item:hover .zoom-icon {
+    transform: scale(1);
+  }
+
+  /* Lightbox Modal CSS */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 8, 10, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 2rem;
+  }
+
+  .lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 44px;
+    cursor: pointer;
+    z-index: 2100;
+    transition: var(--transition-smooth);
+    outline: none;
+  }
+
+  .lightbox-close:hover {
+    background: var(--color-accent);
+    color: #fff;
+    transform: rotate(90deg);
+  }
+
+  .lightbox-nav {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2100;
+    transition: var(--transition-smooth);
+    outline: none;
+    flex-shrink: 0;
+  }
+
+  .lightbox-nav:hover {
+    background: var(--color-gold);
+    color: #000;
+    box-shadow: 0 0 15px rgba(197, 168, 92, 0.4);
+    transform: scale(1.05);
+  }
+
+  .lightbox-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    height: 80vh;
+    position: relative;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: -3rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+  }
+
+  @media (max-width: 768px) {
+    .lightbox {
+      padding: 1rem;
+    }
+    
+    .lightbox-nav {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .lightbox-close {
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      font-size: 2rem;
+      line-height: 34px;
+    }
+    
+    .lightbox-content {
+      max-width: 90%;
+    }
+  }
+</style>

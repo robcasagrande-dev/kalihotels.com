@@ -1,0 +1,62 @@
+---
+const { lang } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const languages = [
+  { code: 'es', label: 'ES' },
+  { code: 'en', label: 'EN' },
+  { code: 'it', label: 'IT' }
+];
+
+function getLangPath(newLang) {
+  const segments = pathname.split('/').filter(Boolean);
+  if (segments.length === 0) return `/${newLang}/`;
+  if (['es', 'en', 'it'].includes(segments[0])) {
+    segments[0] = newLang;
+  } else {
+    segments.unshift(newLang);
+  }
+  return `/${segments.join('/')}/`.replace(/\/+/g, '/');
+}
+---
+<div class="lang-switcher">
+  {languages.map((l) => (
+    <a 
+      href={getLangPath(l.code)} 
+      class={`lang-link ${lang === l.code ? 'active' : ''}`}
+      aria-label={`Switch to ${l.label}`}
+    >
+      {l.label}
+    </a>
+  ))}
+</div>
+
+<style>
+  .lang-switcher {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 0.2rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .lang-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+  }
+  .lang-link:hover {
+    color: var(--text-main);
+  }
+  .lang-link.active {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(155, 23, 107, 0.4);
+  }
+</style>

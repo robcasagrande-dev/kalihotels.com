@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslations, LANGUAGES } from '../../utils/i18n.js';
+import Gallery from '../../components/Gallery.astro';
+
+export function getStaticPaths() {
+  return LANGUAGES.map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+
+const galleryImages = [
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-00.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-03.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-04.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-05.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-06.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-07.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-08.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-09.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-10.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-11.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-12.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-13.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-14.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-15.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-16.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-17.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-19.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-20.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-21.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-22.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-23.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-24.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-25.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-26.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-27.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-28.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-29.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-30.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-31.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-32.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-leda-01.jpg",
+  "https://kalihotels.com/wp-content/uploads/2023/05/casa-leda-02.jpg"
+];
+
+// Construct JSON-LD Structured Data
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Casa de Leda",
+  "description": t.seo.casa_leda.description,
+  "url": `https://kalihotels.com/${lang}/casa-leda/`,
+  "image": "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg",
+  "telephone": "+57 300 987 6543",
+  "email": "leda@kalihotels.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 16 #3-45",
+    "addressLocality": "Santa Marta",
+    "addressRegion": "Magdalena",
+    "addressCountry": "CO"
+  },
+  "priceRange": "$$$",
+  "starRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5"
+  }
+};
+---
+
+<BaseLayout 
+  title={t.seo.casa_leda.title} 
+  description={t.seo.casa_leda.description} 
+  lang={lang} 
+  ogImage="https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg"
+  ogType="website"
+  schema={schema}
+>
+  <!-- Property Hero -->
+  <section class="property-hero">
+    <div class="hero-overlay"></div>
+    <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg" alt="Casa Leda Banner" class="hero-img" />
+    <div class="hero-text container text-center">
+      <h1 class="property-title">{t.properties.casa_leda.title}</h1>
+      <p class="property-subtitle">{t.properties.casa_leda.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Main Info Block -->
+  <section class="property-details container">
+    <div class="details-grid">
+      <div class="details-text">
+        <h2 class="section-title">The Sanctuary</h2>
+        {t.properties.casa_leda.paragraphs.map(p => (
+          <p class="desc-p">{p}</p>
+        ))}
+        
+        <div class="quick-facts">
+          <div class="fact-item">
+            <strong>Location:</strong>
+            <span>Centro Histórico, Santa Marta</span>
+          </div>
+          <div class="fact-item">
+            <strong>Atmosphere:</strong>
+            <span>Colonial Elegance & Wellness Oasis</span>
+          </div>
+          <div class="fact-item">
+            <strong>Highlights:</strong>
+            <span>Subterranean Roman Spa, Rooftop Pool Bar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="details-sidebar glass">
+        <h3>{t.booking.title}</h3>
+        <p>Book directly with us to get access to exclusive room options and benefits.</p>
+        <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791&h=leda" target="_blank" rel="noopener noreferrer" class="btn-gold booking-btn">
+          {t.booking.search}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="property-gallery container">
+    <h2 class="section-title text-center mb-5">Gallery</h2>
+    <Gallery images={galleryImages} />
+  </section>
+
+  <!-- Contact & Info -->
+  <section class="property-contact container">
+    <div class="contact-grid glass">
+      <div class="contact-item">
+        <h4>{t.properties.contact_info.phone}</h4>
+        <p>+57 300 987 6543</p>
+      </div>
+      <div class="contact-item">
+        <h4>{t.properties.contact_info.email}</h4>
+        <p><a href="mailto:leda@kalihotels.com">leda@kalihotels.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>{t.properties.contact_info.address}</h4>
+        <p>Calle 16 #3-45, Centro Histórico, Santa Marta, Colombia</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .property-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 12, 16, 0.4) 0%, rgba(11, 12, 16, 0.85) 100%);
+    z-index: 2;
+  }
+
+  .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 3;
+    padding-top: 80px;
+  }
+
+  .property-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .property-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mb-5 {
+    margin-bottom: 3rem;
+  }
+
+  /* Details Grid */
+  .property-details {
+    padding: 6rem 2rem;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .details-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .desc-p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .quick-facts {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .fact-item {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .fact-item strong {
+    width: 120px;
+    color: var(--color-gold);
+    flex-shrink: 0;
+  }
+
+  .fact-item span {
+    color: var(--text-main);
+  }
+
+  .details-sidebar {
+    padding: 2.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .details-sidebar h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+  }
+
+  .details-sidebar p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .booking-btn {
+    width: 100%;
+    height: 48px;
+  }
+
+  /* Gallery Section */
+  .property-gallery {
+    padding: 2rem 2rem 6rem 2rem;
+  }
+
+  /* Contact Section */
+  .property-contact {
+    padding: 2rem 2rem 8rem 2rem;
+  }
+
+  .contact-grid {
+    padding: 2.5rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact-item h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-item p {
+    color: var(--text-main);
+    font-size: 0.95rem;
+  }
+
+  .contact-item a {
+    color: var(--text-main);
+    transition: var(--transition-fast);
+  }
+
+  .contact-item a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 900px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

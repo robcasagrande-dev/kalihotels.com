@@ -1,0 +1,47 @@
+---
+// Root page - Redirect to language subfolders
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=/es/" />
+    <title>Kali Hotels</title>
+    <script is:inline>
+      try {
+        const supportedLangs = ['es', 'en', 'it'];
+        // Detect primary browser language prefix (e.g., 'en-US' -> 'en')
+        const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+        const targetLang = supportedLangs.includes(userLang) ? userLang : 'es';
+        window.location.replace('/' + targetLang + '/');
+      } catch (e) {
+        window.location.replace('/es/');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="redirect-message">
+      <p>Redirecting to <a href="/es/">Kali Hotels</a>...</p>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: #0b0c10;
+    color: #f5f6fa;
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .redirect-message {
+    text-align: center;
+  }
+  a {
+    color: #c5a85c;
+    text-decoration: underline;
+  }
+</style>
