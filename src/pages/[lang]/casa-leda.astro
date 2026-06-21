@@ -11,39 +11,39 @@ const { lang } = Astro.params;
 const t = getTranslations(lang);
 
 const galleryImages = [
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-00.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-03.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-04.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-05.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-06.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-07.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-08.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-09.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-10.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-11.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-12.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-13.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-14.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-15.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-16.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-17.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-19.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-20.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-21.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-22.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-23.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-24.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-25.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-26.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-27.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-28.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-29.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-30.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-31.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-32.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-leda-01.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-leda-02.jpg"
+  "/images/uploads/2023/05/casa-de-leda-00.jpg",
+  "/images/uploads/2023/05/casa-de-leda-03.jpg",
+  "/images/uploads/2023/05/casa-de-leda-04.jpg",
+  "/images/uploads/2023/05/casa-de-leda-05.jpg",
+  "/images/uploads/2023/05/casa-de-leda-06.jpg",
+  "/images/uploads/2023/05/casa-de-leda-07.jpg",
+  "/images/uploads/2023/05/casa-de-leda-08.jpg",
+  "/images/uploads/2023/05/casa-de-leda-09.jpg",
+  "/images/uploads/2023/05/casa-de-leda-10.jpg",
+  "/images/uploads/2023/05/casa-de-leda-11.jpg",
+  "/images/uploads/2023/05/casa-de-leda-12.jpg",
+  "/images/uploads/2023/05/casa-de-leda-13.jpg",
+  "/images/uploads/2023/05/casa-de-leda-14.jpg",
+  "/images/uploads/2023/05/casa-de-leda-15.jpg",
+  "/images/uploads/2023/05/casa-de-leda-16.jpg",
+  "/images/uploads/2023/05/casa-de-leda-17.jpg",
+  "/images/uploads/2023/05/casa-de-leda-18.jpg",
+  "/images/uploads/2023/05/casa-de-leda-19.jpg",
+  "/images/uploads/2023/05/casa-de-leda-20.jpg",
+  "/images/uploads/2023/05/casa-de-leda-21.jpg",
+  "/images/uploads/2023/05/casa-de-leda-22.jpg",
+  "/images/uploads/2023/05/casa-de-leda-23.jpg",
+  "/images/uploads/2023/05/casa-de-leda-24.jpg",
+  "/images/uploads/2023/05/casa-de-leda-25.jpg",
+  "/images/uploads/2023/05/casa-de-leda-26.jpg",
+  "/images/uploads/2023/05/casa-de-leda-27.jpg",
+  "/images/uploads/2023/05/casa-de-leda-28.jpg",
+  "/images/uploads/2023/05/casa-de-leda-29.jpg",
+  "/images/uploads/2023/05/casa-de-leda-30.jpg",
+  "/images/uploads/2023/05/casa-de-leda-31.jpg",
+  "/images/uploads/2023/05/casa-de-leda-32.jpg",
+  "/images/uploads/2023/05/casa-leda-01.jpg",
+  "/images/uploads/2023/05/casa-leda-02.jpg"
 ];
 
 // Construct JSON-LD Structured Data
@@ -53,7 +53,7 @@ const schema = {
   "name": "Casa de Leda",
   "description": t.seo.casa_leda.description,
   "url": `https://kalihotels.com/${lang}/casa-leda/`,
-  "image": "https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg",
+  "image": "/images/uploads/2023/05/casa-de-leda-18-1024x585.jpg",
   "telephone": "+57 300 987 6543",
   "email": "leda@kalihotels.com",
   "address": {
@@ -75,14 +75,14 @@ const schema = {
   title={t.seo.casa_leda.title} 
   description={t.seo.casa_leda.description} 
   lang={lang} 
-  ogImage="https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg"
+  ogImage="/images/uploads/2023/05/casa-de-leda-18-1024x585.jpg"
   ogType="website"
   schema={schema}
 >
   <!-- Property Hero -->
   <section class="property-hero">
     <div class="hero-overlay"></div>
-    <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-de-leda-18-1024x585.jpg" alt="Casa Leda Banner" class="hero-img" />
+    <img src="/images/uploads/2023/05/casa-de-leda-18-1024x585.jpg" alt="Casa Leda Banner" class="hero-img" />
     <div class="hero-text container text-center">
       <h1 class="property-title">{t.properties.casa_leda.title}</h1>
       <p class="property-subtitle">{t.properties.casa_leda.subtitle}</p>

@@ -11,42 +11,42 @@ const { lang } = Astro.params;
 const t = getTranslations(lang);
 
 const galleryImages = [
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-home.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-10.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-01.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-02.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-03.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-04.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-05.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-06.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-07.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-08.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-09.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-20.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-11.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-12.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-13.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-14.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-16.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-15.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-17.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-18.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-19.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-30.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-21.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-22.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-23.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-24.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-25.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-26.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-27.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-28.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-35.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-34.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-33.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-32.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-31.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-29.jpg"
+  "/images/uploads/2023/05/casa-isabella-home.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-10.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-01.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-02.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-03.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-04.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-05.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-06.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-07.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-08.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-09.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-20.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-11.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-12.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-13.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-14.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-16.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-15.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-17.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-18.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-19.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-30.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-21.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-22.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-23.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-24.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-25.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-26.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-27.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-28.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-35.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-34.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-33.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-32.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-31.jpg",
+  "/images/uploads/2023/05/casa-isabella-01-29.jpg"
 ];
 
 // Construct JSON-LD Structured Data
@@ -56,7 +56,7 @@ const schema = {
   "name": "Casa de Isabella",
   "description": t.seo.casa_isabella.description,
   "url": `https://kalihotels.com/${lang}/casa-isabella/`,
-  "image": "https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-03-1024x683.jpg",
+  "image": "/images/uploads/2023/05/casa-isabella-01-03-1024x683.jpg",
   "telephone": "+57 300 111 2222",
   "email": "isabella@kalihotels.com",
   "address": {
@@ -78,14 +78,14 @@ const schema = {
   title={t.seo.casa_isabella.title} 
   description={t.seo.casa_isabella.description} 
   lang={lang} 
-  ogImage="https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-03-1024x683.jpg"
+  ogImage="/images/uploads/2023/05/casa-isabella-01-03-1024x683.jpg"
   ogType="website"
   schema={schema}
 >
   <!-- Property Hero -->
   <section class="property-hero">
     <div class="hero-overlay"></div>
-    <img src="https://kalihotels.com/wp-content/uploads/2023/05/casa-isabella-01-03-1024x683.jpg" alt="Casa Isabella Banner" class="hero-img" />
+    <img src="/images/uploads/2023/05/casa-isabella-01-03-1024x683.jpg" alt="Casa Isabella Banner" class="hero-img" />
     <div class="hero-text container text-center">
       <h1 class="property-title">{t.properties.casa_isabella.title}</h1>
       <p class="property-subtitle">{t.properties.casa_isabella.subtitle}</p>

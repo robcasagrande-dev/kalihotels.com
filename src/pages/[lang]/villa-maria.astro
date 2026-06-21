@@ -11,46 +11,46 @@ const { lang } = Astro.params;
 const t = getTranslations(lang);
 
 const galleryImages = [
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-01.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-02.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-03.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-04.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-05.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-06.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-07.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-08.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-09.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-10.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-11.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-12.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-13.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-14.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-15.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-16.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-17.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-18.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-19.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-20.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-21.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-22.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-23.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-24.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-25.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-26.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-27.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-28.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-29.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-30.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-31.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-32.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-33.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-34.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-35.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-36.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-37.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-38.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-39.jpg",
-  "https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-40.jpg"
+  "/images/uploads/2023/05/villa-maria-01.jpg",
+  "/images/uploads/2023/05/villa-maria-02.jpg",
+  "/images/uploads/2023/05/villa-maria-03.jpg",
+  "/images/uploads/2023/05/villa-maria-04.jpg",
+  "/images/uploads/2023/05/villa-maria-05.jpg",
+  "/images/uploads/2023/05/villa-maria-06.jpg",
+  "/images/uploads/2023/05/villa-maria-07.jpg",
+  "/images/uploads/2023/05/villa-maria-08.jpg",
+  "/images/uploads/2023/05/villa-maria-09.jpg",
+  "/images/uploads/2023/05/villa-maria-10.jpg",
+  "/images/uploads/2023/05/villa-maria-11.jpg",
+  "/images/uploads/2023/05/villa-maria-12.jpg",
+  "/images/uploads/2023/05/villa-maria-13.jpg",
+  "/images/uploads/2023/05/villa-maria-14.jpg",
+  "/images/uploads/2023/05/villa-maria-15.jpg",
+  "/images/uploads/2023/05/villa-maria-16.jpg",
+  "/images/uploads/2023/05/villa-maria-17.jpg",
+  "/images/uploads/2023/05/villa-maria-18.jpg",
+  "/images/uploads/2023/05/villa-maria-19.jpg",
+  "/images/uploads/2023/05/villa-maria-20.jpg",
+  "/images/uploads/2023/05/villa-maria-21.jpg",
+  "/images/uploads/2023/05/villa-maria-22.jpg",
+  "/images/uploads/2023/05/villa-maria-23.jpg",
+  "/images/uploads/2023/05/villa-maria-24.jpg",
+  "/images/uploads/2023/05/villa-maria-25.jpg",
+  "/images/uploads/2023/05/villa-maria-26.jpg",
+  "/images/uploads/2023/05/villa-maria-27.jpg",
+  "/images/uploads/2023/05/villa-maria-28.jpg",
+  "/images/uploads/2023/05/villa-maria-29.jpg",
+  "/images/uploads/2023/05/villa-maria-30.jpg",
+  "/images/uploads/2023/05/villa-maria-31.jpg",
+  "/images/uploads/2023/05/villa-maria-32.jpg",
+  "/images/uploads/2023/05/villa-maria-33.jpg",
+  "/images/uploads/2023/05/villa-maria-34.jpg",
+  "/images/uploads/2023/05/villa-maria-35.jpg",
+  "/images/uploads/2023/05/villa-maria-36.jpg",
+  "/images/uploads/2023/05/villa-maria-37.jpg",
+  "/images/uploads/2023/05/villa-maria-38.jpg",
+  "/images/uploads/2023/05/villa-maria-39.jpg",
+  "/images/uploads/2023/05/villa-maria-40.jpg"
 ];
 
 // Construct JSON-LD Structured Data
@@ -60,7 +60,7 @@ const schema = {
   "name": "Villa María Tayrona",
   "description": t.seo.villa_maria.description,
   "url": `https://kalihotels.com/${lang}/villa-maria/`,
-  "image": "https://kalihotels.com/wp-content/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg",
+  "image": "/images/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg",
   "telephone": "+57 300 123 4567",
   "email": "villamaria@kalihotels.com",
   "address": {
@@ -82,14 +82,14 @@ const schema = {
   title={t.seo.villa_maria.title} 
   description={t.seo.villa_maria.description} 
   lang={lang} 
-  ogImage="https://kalihotels.com/wp-content/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg"
+  ogImage="/images/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg"
   ogType="website"
   schema={schema}
 >
   <!-- Property Hero -->
   <section class="property-hero">
     <div class="hero-overlay"></div>
-    <img src="https://kalihotels.com/wp-content/uploads/2023/05/villa-maria-16-1024x585.jpg" alt="Villa Maria Tayrona Banner" class="hero-img" />
+    <img src="/images/uploads/2023/05/villa-maria-16-1024x585.jpg" alt="Villa Maria Tayrona Banner" class="hero-img" />
     <div class="hero-text container text-center">
       <h1 class="property-title">{t.properties.villa_maria.title}</h1>
       <p class="property-subtitle">{t.properties.villa_maria.subtitle}</p>
