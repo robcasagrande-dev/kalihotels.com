@@ -54,28 +54,68 @@ const galleryImages = [
 ];
 
 // Construct JSON-LD Structured Data
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Hotel",
-  "name": "Villa María Tayrona",
-  "description": t.seo.villa_maria.description,
-  "url": `https://kalihotels.com/${lang}/villa-maria/`,
-  "image": "/images/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg",
-  "telephone": "+57 300 123 4567",
-  "email": "villamaria@kalihotels.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Km 35 Troncal del Caribe",
-    "addressLocality": "Tayrona",
-    "addressRegion": "Magdalena",
-    "addressCountry": "CO"
+const baseUrl = `https://kalihotels.com/${lang}/villa-maria/`;
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "@id": baseUrl + "#hotel",
+    "name": "Villa María Tayrona",
+    "description": t.seo.villa_maria.description,
+    "url": baseUrl,
+    "image": [
+      "https://kalihotels.com/images/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg",
+      "https://kalihotels.com/images/uploads/2023/05/villa-maria-16-1024x585.jpg"
+    ],
+    "telephone": "+57 300 123 4567",
+    "email": "reservas.kalihotels@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Km 35 Vía Riohacha",
+      "addressLocality": "Santa Marta",
+      "addressRegion": "Magdalena",
+      "postalCode": "470006",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "11.3222",
+      "longitude": "-73.9122"
+    },
+    "priceRange": "$$$",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5"
+    },
+    "checkinTime": "14:00",
+    "checkoutTime": "12:00",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Breakfast", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Outdoor Jacuzzi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "24-hour front desk", "value": true }
+    ],
+    "containedInPlace": {
+      "@type": "Park",
+      "name": "Parque Nacional Natural Tayrona"
+    },
+    "sameAs": [
+      "https://www.instagram.com/kalihotels",
+      "https://www.facebook.com/kalihotels"
+    ]
   },
-  "priceRange": "$$$",
-  "starRating": {
-    "@type": "Rating",
-    "ratingValue": "4.5"
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Kali Hotels", "item": `https://kalihotels.com/${lang}/` },
+      { "@type": "ListItem", "position": 2, "name": "Villa María Tayrona", "item": baseUrl }
+    ]
   }
-};
+];
 ---
 
 <BaseLayout 

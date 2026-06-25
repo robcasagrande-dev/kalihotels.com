@@ -7,7 +7,7 @@ const {
   title, 
   description = "Kali Hotels - Santa Marta & Tayrona", 
   lang = "es",
-  ogImage = "/images/VILLA-MARIA-DRONE-18-1.jpg",
+  ogImage = "/images/VILLA-MARIA-DRONE-18-1.jpg", // Note: callers should pass absolute URL
   ogType = "website",
   schema
 } = Astro.props;
@@ -30,12 +30,13 @@ const innerPath = pathSegments.slice(1).join('/'); // 'villa-maria' or ''
 // Build canonical URL
 const canonicalURL = `${origin}${pathname}`;
 
-// Build alternate links
+// Build alternate links (all 5 supported languages + x-default)
 const alternates = [
   { lang: 'es', href: `${origin}/es/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'en', href: `${origin}/en/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'it', href: `${origin}/it/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'fr', href: `${origin}/fr/${innerPath ? innerPath + '/' : ''}` },
+  { lang: 'de', href: `${origin}/de/${innerPath ? innerPath + '/' : ''}` },
   { lang: 'x-default', href: `${origin}/es/${innerPath ? innerPath + '/' : ''}` }
 ];
 ---
@@ -60,29 +61,37 @@ const alternates = [
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${origin}${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:site_name" content="Kali Hotels" />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : lang === 'it' ? 'it_IT' : 'en_US'} />
     {lang !== 'es' && <meta property="og:locale:alternate" content="es_ES" />}
     {lang !== 'en' && <meta property="og:locale:alternate" content="en_US" />}
     {lang !== 'it' && <meta property="og:locale:alternate" content="it_IT" />}
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kalihotels" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${origin}${ogImage}`} />
+    <meta name="twitter:image:alt" content={title} />
 
     <!-- Structured Data (JSON-LD) -->
     {schema && (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     )}
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (font-display=swap prevents render blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Preload critical hero image for LCP optimization -->
+    <link rel="dns-prefetch" href="https://wubook.net" />
   </head>
   <body>
     <div class="site-wrapper">
