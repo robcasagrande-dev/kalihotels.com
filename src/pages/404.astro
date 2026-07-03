@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getTranslations, DEFAULT_LANGUAGE } from '../utils/i18n.js';
+
+const lang = DEFAULT_LANGUAGE;
+const t = getTranslations(lang);
+---
+
+<BaseLayout 
+  title="404 - Page Not Found | Kali Hotels" 
+  description="The page you are looking for does not exist." 
+  lang={lang}
+>
+  <section class="hero-section">
+    <div class="video-overlay"></div>
+    <div class="hero-content container text-center">
+      <h1 class="property-title">404</h1>
+      <h2 class="property-subtitle">Page Not Found</h2>
+      <p class="desc-p mt-4 mb-5">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+      <a href={`/${lang}/`} class="btn-gold">Return to Homepage</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/uploads/2023/05/casa-isabella-home.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 12, 16, 0.7) 0%, rgba(11, 12, 16, 0.95) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .property-title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: var(--color-gold);
+    margin-bottom: 0;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .property-subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+
+  .desc-p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+  }
+
+  .mt-4 { margin-top: 1.5rem; }
+  .mb-5 { margin-bottom: 3rem; }
+  
+  .btn-gold {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+</style>
