@@ -51,6 +51,19 @@ const t = getTranslations(lang);
           </svg>
         </button>
       </div>
+
+      <div class="email-cta-row">
+        <span class="email-cta-label">{t.guarantee.email_cta}</span>
+        <a
+          href="mailto:reservas.kalihotels@gmail.com?subject=Mejor%20precio%20encontrado%20%E2%80%94%20SDBOOK&body=Hola%2C%20encontr%C3%A9%20un%20precio%20m%C3%A1s%20bajo%20en%20[OTA].%20Adjunto%20captura%20de%20pantalla."
+          class="email-cta-link"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16" style="margin-top:-1px;">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+          </svg>
+          reservas.kalihotels@gmail.com
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -297,6 +310,36 @@ const t = getTranslations(lang);
   .btn-copy.copied {
     color: #4CAF50;
     transform: scale(1.1);
+  }
+
+  .email-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .email-cta-label {
+    color: var(--text-muted);
+  }
+
+  .email-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-fast);
+    border-bottom: 1px solid transparent;
+  }
+
+  .email-cta-link:hover {
+    border-bottom-color: var(--color-gold);
+    opacity: 0.85;
   }
 
   /* Loading Spinner */

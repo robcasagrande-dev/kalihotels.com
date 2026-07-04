@@ -102,6 +102,8 @@
     "success": "Prenotazioni dirette, sempre al miglior prezzo. Usa il codice SDBOOK per un 10% di sconto immediato. Trovi un prezzo più basso su una OTA? Lo pareggiamo e aggiungiamo un ulteriore 5%.",
     "code_label": "CODICE:",
     "copy_aria": "Copia codice",
+    "email_cta": "Trovato un prezzo più basso?",
+    "email_cta_link": "Inviaci lo screenshot qui",
     "error_server": "Errore del server. Per favore riprova.",
     "error_connection": "Errore di connessione. Per favore riprova."
   }

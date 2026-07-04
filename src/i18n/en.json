@@ -102,6 +102,8 @@
     "success": "Direct bookings, always at the best price. Use code SDBOOK for an instant 10% off. Find a lower price on any OTA? We'll match it and add an extra 5% off.",
     "code_label": "CODE:",
     "copy_aria": "Copy code",
+    "email_cta": "Found a lower price?",
+    "email_cta_link": "Send us the screenshot here",
     "error_server": "Server error. Please try again.",
     "error_connection": "Connection error. Please try again."
   }
