@@ -93,5 +93,16 @@
       "title": "Casa de Isabella | Hotel Boutique Colonial en Santa Marta | Kali Hotels",
       "description": "Reserva en Casa de Isabella by Kali Hotels. Elegante hotel boutique colonial en el Centro Histórico de Santa Marta con piscina privada y diseño moderno."
     }
+  },
+  "guarantee": {
+    "title": "Garantía de Mejor Precio",
+    "subtitle": "Reserva directamente con nosotros para beneficios exclusivos",
+    "placeholder": "Ingresa tu correo",
+    "button": "Desbloquear Mejor Precio",
+    "success": "¡Éxito! Tu código privado es SDBOOK. Ingresa este código al procesar el pago para obtener un descuento instantáneo del 10% sobre nuestra tarifa estándar. Si tu nivel Genius en Booking.com supera este precio, ¡reserva directamente con nosotros de todos modos! Simplemente responde a tu correo de confirmación con una captura de pantalla del precio más bajo de la OTA y deduciremos manualmente un 5% adicional de tu factura en el check-in.",
+    "code_label": "CÓDIGO:",
+    "copy_aria": "Copiar código",
+    "error_server": "Error en el servidor. Por favor, intenta de nuevo.",
+    "error_connection": "Error de conexión. Intente de nuevo."
   }
 }

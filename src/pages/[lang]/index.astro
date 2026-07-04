@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingWidget from '../../components/BookingWidget.astro';
+import PriceGuarantee from '../../components/PriceGuarantee.astro';
 import { getTranslations, LANGUAGES } from '../../utils/i18n.js';
 
 export function getStaticPaths() {
@@ -84,6 +85,7 @@ const schema = {
 
   <!-- Booking Widget Section -->
   <BookingWidget lang={lang} />
+  <PriceGuarantee lang={lang} />
 
   <!-- Essence Section -->
   <section class="essence-section container">
