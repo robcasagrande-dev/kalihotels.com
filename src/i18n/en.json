@@ -99,7 +99,7 @@
     "subtitle": "Book directly with us for exclusive benefits",
     "placeholder": "Enter your email",
     "button": "Unlock Best Price",
-    "success": "Success! Your private code is SDBOOK. Enter this code at checkout for an instant 10% off our standard rate. If your Booking.com Genius tier somehow beats this price, book directly with us anyway! Just reply to your confirmation email with a screenshot of the lower OTA price, and we will manually deduct an extra 5% from your bill at check-in.",
+    "success": "Direct bookings, always at the best price. Use code SDBOOK for an instant 10% off. Find a lower price on any OTA? We'll match it and add an extra 5% off.",
     "code_label": "CODE:",
     "copy_aria": "Copy code",
     "error_server": "Server error. Please try again.",

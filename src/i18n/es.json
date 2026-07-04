@@ -99,7 +99,7 @@
     "subtitle": "Reserva directamente con nosotros para beneficios exclusivos",
     "placeholder": "Ingresa tu correo",
     "button": "Desbloquear Mejor Precio",
-    "success": "¡Éxito! Tu código privado es SDBOOK. Ingresa este código al procesar el pago para obtener un descuento instantáneo del 10% sobre nuestra tarifa estándar. Si tu nivel Genius en Booking.com supera este precio, ¡reserva directamente con nosotros de todos modos! Simplemente responde a tu correo de confirmación con una captura de pantalla del precio más bajo de la OTA y deduciremos manualmente un 5% adicional de tu factura en el check-in.",
+    "success": "Reservas directas, siempre al mejor precio. Usa el código SDBOOK y obtén un 10% de descuento inmediato. Si encuentras un precio menor en cualquier OTA, lo igualamos y te sumamos un 5% extra.",
     "code_label": "CÓDIGO:",
     "copy_aria": "Copiar código",
     "error_server": "Error en el servidor. Por favor, intenta de nuevo.",
