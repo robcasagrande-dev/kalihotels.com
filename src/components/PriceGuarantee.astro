@@ -19,6 +19,12 @@ const t = getTranslations(lang);
     
     <div id="guarantee-form-block">
       <form id="guarantee-email-form" class="guarantee-form" data-err-server={t.guarantee.error_server} data-err-connection={t.guarantee.error_connection}>
+        <select id="guarantee-hotel-select" name="hotel" class="input-field select-field" required>
+          <option value="" disabled selected>{t.booking.select_hotel}</option>
+          <option value="Villa Maria Tayrona">{t.nav.villa_maria}</option>
+          <option value="Casa de Leda">{t.nav.casa_leda}</option>
+          <option value="Casa de Isabella">{t.nav.casa_isabella}</option>
+        </select>
         <input 
           type="email" 
           id="guarantee-email-input" 
@@ -87,6 +93,8 @@ const t = getTranslations(lang);
       e.preventDefault();
       
       const email = input.value.trim();
+      const hotelSelect = document.getElementById('guarantee-hotel-select') as HTMLSelectElement;
+      const hotel = hotelSelect ? hotelSelect.value : '';
       if (!email) return;
 
       // Reset state
@@ -103,7 +111,7 @@ const t = getTranslations(lang);
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ email, hotel })
         });
 
         if (!response.ok) {
@@ -209,11 +217,43 @@ const t = getTranslations(lang);
     gap: 1rem;
   }
 
-  .email-field {
-    flex: 1;
+  .input-field {
+    width: 100%;
     background: rgba(255, 255, 255, 0.03);
-    height: 48px;
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
     border-radius: 6px;
+    transition: var(--transition-fast);
+    outline: none;
+    height: 48px;
+  }
+
+  .input-field:focus {
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(155, 23, 107, 0.15);
+  }
+
+  .select-field {
+    flex: 0.8;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239fa4b0' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .select-field option {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+  }
+
+  .email-field {
+    flex: 1.2;
   }
 
   .guarantee-btn {
