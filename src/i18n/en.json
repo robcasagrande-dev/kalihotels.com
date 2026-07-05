@@ -6,7 +6,12 @@
     "book": "Book Now"
   },
   "hero": {
-    "santuarios": ["Paradises", "Sanctuaries", "Jewels", "Temples"],
+    "santuarios": [
+      "Paradises",
+      "Sanctuaries",
+      "Jewels",
+      "Temples"
+    ],
     "title": "The Essence of Santa Marta",
     "subtitle": "Kali Hotels transcends conventional hospitality.",
     "cta": "Book Here"
@@ -42,7 +47,12 @@
         "Villa Maria by Kali Hotels is a jungle retreat 40 minutes from the Old City of Santa Marta and just 3 kilometers from the main entrance to Tayrona National Park. You not only have panoramic views of the Caribbean Sea, but you can also ponder the glaciers atop the Sierra Nevada de Santa Marta – the world’s highest coastal mountain range. You can relax at the pool or take a short walk through our tranquil avocado farm brings you solitude at an unspoiled, white sand beach.",
         "Attended by 24-hour staff, Villa Maria provides daily maid service, complimentary hot breakfast, and rooms with air conditioning and hot water. An on-site restaurant at the hotel allows guests to dine in the restaurant without having to drive.",
         "The Villa Maria experience is the perfect addition to your Santa Marta vacation. Local attractions include the Valencia Waterfall, the trek to the Lost City, and the Orinoco. Sunbathing, swimming, or walking the grounds will make you cherish every moment."
-      ]
+      ],
+      "facts": {
+        "location": "Km 35 Vía Riohacha, Tayrona Park",
+        "atmosphere": "Jungle Eco-Luxury & Sea Views",
+        "highlights": "Jungle paths, wildlife spotting"
+      }
     },
     "casa_leda": {
       "title": "Casa de Leda",
@@ -53,7 +63,12 @@
         "Our hotel offers plenty of opportunities to relax. Take a steam bath at the SPA, soak in the sun at the rooftop pool, and relax with a drink on the main terrace with a magnificent view of the old Cathedral.",
         "In 2014 Casa de Leda was declared the best small hotel in Colombia by booking.com – The Booking Truth. The hotel has also won several awards in Trip Advisor every year since its opening.",
         "Just a short walk from Parque de Los Novios nightlife and the new Marina, Casa de Leda offers an ideal location far from the crowd but close enough to be anywhere in a minute."
-      ]
+      ],
+      "facts": {
+        "location": "Centro Histórico, Santa Marta",
+        "atmosphere": "Colonial Elegance & Wellness Oasis",
+        "highlights": "Subterranean Roman Spa, Rooftop Pool Bar"
+      }
     },
     "casa_isabella": {
       "title": "Casa de Isabella",
@@ -64,13 +79,23 @@
         "Our hotel offers plenty of opportunities to relax. Soak in the sun at our plunge pool or your private rooftop pool, take a stroll in Centro, or enjoy a meal at the numerous restaurants nearby.",
         "Just a block from Parque de Los Novios nightlife and the new Marina, it offers an ideal location far from noise but close enough to be anywhere in a minute.",
         "Our hotel is every year Certificate of Excellence and the Traveler’s choice winner. Visit us here in Colombia and experience why!"
-      ]
+      ],
+      "facts": {
+        "location": "Centro Histórico, Santa Marta",
+        "atmosphere": "Colonial Grandeur & Contemporary Luxury",
+        "highlights": "Tropical Courtyard, Private Pool, Curated Art"
+      }
     },
     "contact_info": {
       "phone": "Phone",
       "email": "Email",
       "address": "Address",
       "follow_us": "Follow Us"
+    },
+    "labels": {
+      "location": "Location",
+      "atmosphere": "Atmosphere",
+      "highlights": "Highlights"
     }
   },
   "footer": {

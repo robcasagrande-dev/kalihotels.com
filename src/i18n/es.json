@@ -6,7 +6,12 @@
     "book": "Reservar"
   },
   "hero": {
-    "santuarios": ["Paraísos", "Santuarios", "Joyas", "Templos"],
+    "santuarios": [
+      "Paraísos",
+      "Santuarios",
+      "Joyas",
+      "Templos"
+    ],
     "title": "La Esencia de Santa Marta",
     "subtitle": "Kali Hotels trasciende la hotelería convencional.",
     "cta": "Reservar Aquí"
@@ -42,7 +47,12 @@
         "Villa Maria by Kali Hotels es un hotel en la jungla a 40 minutos de la Ciudad Vieja de Santa Marta y a solo 3 kilómetros de la entrada principal al Parque Nacional Tayrona. No solo tiene vistas panorámicas del Mar Caribe, sino que también puede reflexionar sobre los glaciares en la cima de la Sierra Nevada de Santa Marta, la cadena montañosa costera más alta del mundo. Puede relajarse en la piscina o dar un corto paseo por nuestra tranquila granja de aguacates que le brinda soledad en una playa virgen de arena blanca.",
         "Atendido por personal las 24 horas, Villa María ofrece servicio diario de mucama, desayuno caliente de cortesía y habitaciones con aire acondicionado y agua caliente. Un restaurante en el lugar en el hotel permite a los huéspedes cenar en el restaurante sin tener que conducir.",
         "La experiencia de Villa María es el complemento perfecto para sus vacaciones en Santa Marta. Las atracciones locales incluyen la Catarata de Valencia, la caminata a la Ciudad Perdida y el Orinoco. Tomar el sol, nadar o caminar por los jardines te hará apreciar cada momento."
-      ]
+      ],
+      "facts": {
+        "location": "Km 35 Vía Riohacha, Parque Tayrona",
+        "atmosphere": "Eco-Lujo en la Selva & Vistas al Mar",
+        "highlights": "Senderos en la selva, avistamiento de fauna"
+      }
     },
     "casa_leda": {
       "title": "Casa de Leda",
@@ -53,7 +63,12 @@
         "Nuestro hotel ofrece muchas oportunidades para relajarse. Tome un baño de vapor en el SPA, tome el sol en la piscina de la azotea y relájese con una bebida en la terraza principal con una magnífica vista de la Catedral Vieja.",
         "En 2014 Casa de Leda fue declarado el mejor hotel pequeño de Colombia por booking.com – The Booking Truth. El hotel también ha ganado varios premios en Trip Advisor cada año desde su apertura.",
         "A pocos pasos de la vida nocturna del Parque de Los Novios y la nueva Marina, Casa de Leda ofrece una ubicación ideal lejos de la multitud, pero lo suficientemente cerca como para estar en cualquier lugar en un minuto."
-      ]
+      ],
+      "facts": {
+        "location": "Centro Histórico, Santa Marta",
+        "atmosphere": "Elegancia Colonial & Oasis de Bienestar",
+        "highlights": "Spa Romano Subterráneo, Bar en la Piscina de la Azotea"
+      }
     },
     "casa_isabella": {
       "title": "Casa de Isabella",
@@ -64,13 +79,23 @@
         "Nuestro hotel ofrece muchas oportunidades para relajarse. Tome el sol en nuestra piscina de inmersión o en su piscina privada en la azotea, dé un paseo por el Centro o disfrute de una comida en los numerosos restaurantes cercanos.",
         "A solo una cuadra de la vida nocturna del Parque de Los Novios y la nueva Marina, ofrece una ubicación ideal lejos del ruido pero lo suficientemente cerca como para estar en cualquier lugar en un minuto.",
         "Nuestro hotel es cada año Certificado de Excelencia y ganador de la elección del Viajero. ¡Visítenos aquí en Colombia y experimente por qué!"
-      ]
+      ],
+      "facts": {
+        "location": "Centro Histórico, Santa Marta",
+        "atmosphere": "Esplendor Colonial & Lujo Contemporáneo",
+        "highlights": "Patio Tropical, Piscina Privada, Arte Curado"
+      }
     },
     "contact_info": {
       "phone": "Teléfono",
       "email": "Correo Electrónico",
       "address": "Dirección",
       "follow_us": "Síguenos"
+    },
+    "labels": {
+      "location": "Ubicación",
+      "atmosphere": "Ambiente",
+      "highlights": "Destacados"
     }
   },
   "footer": {
