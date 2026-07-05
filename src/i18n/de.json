@@ -97,7 +97,7 @@
   "guarantee": {
     "title": "Bestpreisgarantie",
     "subtitle": "Buchen Sie direkt bei uns für exklusive Vorteile",
-    "placeholder": "Geben Sie Ihre E-Mail ein",
+    "placeholder": "Email",
     "button": "Bestpreis freischalten",
     "success": "Erfolgreich! Ihr privater Code lautet SDBOOK. Geben Sie diesen Code beim Checkout ein, um sofort 10% Rabatt auf unseren Standardtarif zu erhalten. Wenn Ihre Genius-Stufe bei Booking.com diesen Preis schlägt, buchen Sie trotzdem direkt bei uns! Antworten Sie einfach auf Ihre Bestätigungs-E-Mail mit einem Screenshot des günstigeren OTA-Preises, und wir ziehen Ihnen beim Check-in manuell zusätzliche 5% von Ihrer Rechnung ab.",
     "code_label": "CODE:",

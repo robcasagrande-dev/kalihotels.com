@@ -97,7 +97,7 @@
   "guarantee": {
     "title": "Garantía de Mejor Precio",
     "subtitle": "Reserva directamente con nosotros para beneficios exclusivos",
-    "placeholder": "Ingresa tu correo",
+    "placeholder": "Email",
     "button": "Desbloquear Mejor Precio",
     "success": "Reservas directas, siempre al mejor precio. Usa el código SDBOOK y obtén un 10% de descuento inmediato. Si encuentras un precio menor en cualquier OTA, lo igualamos y te sumamos un 5% extra.",
     "code_label": "CÓDIGO:",

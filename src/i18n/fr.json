@@ -97,7 +97,7 @@
   "guarantee": {
     "title": "Garantie du Meilleur Prix",
     "subtitle": "Réservez directement avec nous pour des avantages exclusifs",
-    "placeholder": "Entrez votre adresse e-mail",
+    "placeholder": "Email",
     "button": "Débloquer le Meilleur Prix",
     "success": "Succès ! Votre code privé est SDBOOK. Saisissez ce code lors du paiement pour bénéficier d'une réduction immédiate de 10% sur notre tarif standard. Si votre niveau Genius Booking.com dépasse ce prix, réservez quand même directement chez nous ! Répondez simplement à votre e-mail de confirmation avec une capture d'écran du prix OTA inférieur, et nous déduirons manuellement 5% supplémentaires de votre facture lors de l'enregistrement.",
     "code_label": "CODE :",
