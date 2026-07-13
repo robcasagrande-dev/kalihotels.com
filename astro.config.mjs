@@ -8,5 +8,18 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: {
+          es: 'es',
+          en: 'en',
+          it: 'it',
+          fr: 'fr',
+          de: 'de'
+        }
+      }
+    })
+  ]
 });
