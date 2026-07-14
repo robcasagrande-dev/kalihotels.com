@@ -1,0 +1,139 @@
+---
+export interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+
+const sectionTitle = isEs ? "Nuestros Sellos de Excelencia" : "Our Excellence Seals";
+
+const inclusionTitle = isEs ? "Sello de Inclusión TayronaGuide" : "TayronaGuide Inclusivity Seal";
+const inclusionText = isEs 
+  ? "Otorgado a propiedades con un compromiso excepcional con la accesibilidad, los espacios seguros y el respeto a las comunidades indígenas." 
+  : "Awarded to properties with an exceptional commitment to accessibility, safe spaces, and respect for Indigenous communities.";
+const inclusionLinkText = isEs ? "Ver Criterios en TayronaGuide" : "View Criteria on TayronaGuide";
+const inclusionHref = isEs ? "https://parquetayrona.org/es/guides/inclusive-tourism" : "https://parquetayrona.org/guides/inclusive-tourism";
+
+const transparencyTitle = isEs ? "Sello de Transparencia TayronaGuide" : "TayronaGuide Transparency Seal";
+const transparencyText = isEs 
+  ? "Otorgado a propiedades verificadas que cumplen estrictamente con la ley, ofrecen empleo justo y operan con total transparencia." 
+  : "Awarded to verified properties that strictly comply with the law, offer fair employment, and operate with total transparency.";
+const transparencyLinkText = isEs ? "Ver Criterios en TayronaGuide" : "View Criteria on TayronaGuide";
+const transparencyHref = isEs ? "https://parquetayrona.org/es/guides/11-turismo-etico" : "https://parquetayrona.org/guides/11-turismo-etico";
+---
+
+<section class="tayrona-sellos-section">
+  <div class="container sellos-container">
+    <h2 class="section-title reveal-on-scroll">{sectionTitle}</h2>
+    <div class="sellos-grid">
+      <div class="sello-card glass reveal-on-scroll">
+        <img src="/icons/sello-inclusion.svg" alt="Sello de Inclusión" class="sello-icon" />
+        <div class="sello-content">
+          <h3>{inclusionTitle}</h3>
+          <p>{inclusionText}</p>
+          <a href={inclusionHref} target="_blank" rel="noopener noreferrer" class="sello-link">{inclusionLinkText} &rarr;</a>
+        </div>
+      </div>
+      
+      <div class="sello-card glass reveal-on-scroll" style="transition-delay: 0.2s;">
+        <img src="/icons/sello-transparencia.svg" alt="Sello de Transparencia" class="sello-icon" />
+        <div class="sello-content">
+          <h3>{transparencyTitle}</h3>
+          <p>{transparencyText}</p>
+          <a href={transparencyHref} target="_blank" rel="noopener noreferrer" class="sello-link">{transparencyLinkText} &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tayrona-sellos-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg);
+  }
+
+  .sellos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-main);
+    margin-bottom: 3rem;
+  }
+
+  .sellos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .sellos-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .sello-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .sello-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(197, 168, 92, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .sello-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1.5rem;
+  }
+
+  .sello-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .sello-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+  }
+
+  .sello-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .sello-link {
+    font-weight: 600;
+    color: var(--color-gold);
+    display: inline-block;
+    margin-top: auto;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .sello-link:hover {
+    color: var(--color-white);
+  }
+</style>
