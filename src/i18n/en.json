@@ -96,7 +96,8 @@
       "location": "Location",
       "atmosphere": "Atmosphere",
       "highlights": "Highlights"
-    }
+    },
+    "parking_promo": "Preferred nearby parking with 24-hour security"
   },
   "footer": {
     "copyright": "Copyright © 2026 Kali Hotels. All rights reserved."

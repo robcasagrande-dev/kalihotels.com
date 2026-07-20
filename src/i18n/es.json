@@ -96,7 +96,8 @@
       "location": "Ubicación",
       "atmosphere": "Ambiente",
       "highlights": "Destacados"
-    }
+    },
+    "parking_promo": "Estacionamiento cercano preferido con seguridad las 24 horas"
   },
   "footer": {
     "copyright": "Copyright © 2026 Kali Hotels. Todos los derechos reservados."
