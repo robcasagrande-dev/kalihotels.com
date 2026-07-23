@@ -47,6 +47,92 @@ const schema = {
         "contactType": "reservations",
         "email": "reservas.kalihotels@gmail.com"
       }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Luxury Boutique Hotels in Santa Marta & Tayrona National Park",
+      "description": "Exclusive boutique hotel sanctuaries in Santa Marta Historic Center and near Tayrona National Park, Colombia.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Hotel",
+            "name": "Casa de Leda",
+            "description": t.seo.casa_leda.description,
+            "url": `https://kalihotels.com/${lang}/casa-leda/`,
+            "image": "https://kalihotels.com/images/uploads/2023/05/casa-de-leda-18-1024x585.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Calle 16 #3-45",
+              "addressLocality": "Santa Marta",
+              "addressRegion": "Magdalena",
+              "addressCountry": "CO"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Hotel",
+            "name": "Casa de Isabella",
+            "description": t.seo.casa_isabella.description,
+            "url": `https://kalihotels.com/${lang}/casa-isabella/`,
+            "image": "https://kalihotels.com/images/uploads/2023/05/casa-isabella-01-03-1024x683.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Calle 13 #3-32",
+              "addressLocality": "Santa Marta",
+              "addressRegion": "Magdalena",
+              "addressCountry": "CO"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Hotel",
+            "name": "Villa María Tayrona",
+            "description": t.seo.villa_maria.description,
+            "url": `https://kalihotels.com/${lang}/villa-maria/`,
+            "image": "https://kalihotels.com/images/uploads/2024/04/VILLA-MARIA-DRONE-18-1.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Km 35 Vía Riohacha",
+              "addressLocality": "Santa Marta",
+              "addressRegion": "Magdalena",
+              "addressCountry": "CO"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": lang === 'es' ? "¿Cuáles son los mejores hoteles en Santa Marta?" : "What are the best hotels in Santa Marta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'es' 
+              ? "Los mejores hoteles boutique de lujo en Santa Marta son Casa de Leda y Casa de Isabella en el Centro Histórico, y Villa María Tayrona junto al Parque Nacional Tayrona."
+              : "The top luxury boutique hotels in Santa Marta are Casa de Leda and Casa de Isabella in the Historic Center, and Villa Maria Tayrona near Tayrona National Park."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'es' ? "¿Dónde alojarse cerca del Parque Nacional Tayrona?" : "Where to stay near Tayrona National Park?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'es'
+              ? "Villa María Tayrona by Kali Hotels es el hotel de lujo #1 ubicado a solo 3 km de la entrada principal del Parque Tayrona, con vistas espectaculares al mar Caribe y a la selva."
+              : "Villa Maria Tayrona by Kali Hotels is the premier 5-star eco-lodge located just 3 km from the main entrance of Tayrona National Park, offering ocean views and jungle luxury."
+          }
+        }
+      ]
     }
   ]
 };
