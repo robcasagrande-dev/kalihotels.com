@@ -1,0 +1,162 @@
+---
+export interface Props {
+  lang?: string;
+  compact?: boolean;
+}
+
+const { lang = 'es', compact = false } = Astro.props;
+const isEs = lang === 'es';
+
+const inclusionHref = isEs 
+  ? "https://parquetayrona.org/es/guides/inclusive-tourism" 
+  : "https://parquetayrona.org/guides/inclusive-tourism";
+
+const transparencyHref = isEs 
+  ? "https://parquetayrona.org/es/guides/11-turismo-etico" 
+  : "https://parquetayrona.org/guides/11-turismo-etico";
+
+const certifiedText = isEs 
+  ? "Certificación de Excelencia TayronaGuide" 
+  : "TayronaGuide Excellence Certification";
+
+const inclusionTitle = isEs ? "Sello de Inclusión" : "Inclusivity Seal";
+const transparencyTitle = isEs ? "Sello de Transparencia" : "Transparency Seal";
+---
+
+<div class={`tayrona-badge-wrapper ${compact ? 'compact-mode' : ''}`}>
+  <div class="badge-header">
+    <span class="badge-label">{certifiedText}</span>
+  </div>
+  <div class="badge-items">
+    <!-- Followable SEO Link 1: Inclusivity Seal -->
+    <a 
+      href={inclusionHref} 
+      target="_blank" 
+      rel="noopener" 
+      class="badge-link"
+      title={`${inclusionTitle} — ${isEs ? 'Ver criterios en parquetayrona.org' : 'View criteria on parquetayrona.org'}`}
+    >
+      <div class="badge-icon-circle heart-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="seal-icon">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </div>
+      <span class="badge-name">{inclusionTitle}</span>
+    </a>
+
+    <!-- Followable SEO Link 2: Transparency / Ethical Seal -->
+    <a 
+      href={transparencyHref} 
+      target="_blank" 
+      rel="noopener" 
+      class="badge-link"
+      title={`${transparencyTitle} — ${isEs ? 'Ver criterios en parquetayrona.org' : 'View criteria on parquetayrona.org'}`}
+    >
+      <div class="badge-icon-circle shield-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="seal-icon">
+          <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <span class="badge-name">{transparencyTitle}</span>
+    </a>
+  </div>
+</div>
+
+<style>
+  .tayrona-badge-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.85rem;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+
+  .tayrona-badge-wrapper:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(197, 168, 92, 0.3);
+  }
+
+  .badge-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .badge-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold, #c5a85c);
+  }
+
+  .badge-items {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .badge-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-main, #ffffff);
+    transition: transform 0.2s ease;
+  }
+
+  .badge-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .badge-icon-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .heart-circle {
+    background: rgba(236, 72, 153, 0.12);
+  }
+
+  .shield-circle {
+    background: rgba(16, 185, 129, 0.12);
+  }
+
+  .seal-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .badge-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted, #e2e8f0);
+  }
+
+  .badge-link:hover .badge-name {
+    color: var(--text-main, #ffffff);
+    text-decoration: underline;
+  }
+
+  /* Compact Mode for Footer */
+  .compact-mode {
+    padding: 0.5rem 0.85rem;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+  }
+
+  .compact-mode .badge-label {
+    font-size: 0.7rem;
+  }
+</style>

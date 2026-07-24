@@ -1,5 +1,6 @@
 ---
 import { getTranslations } from '../utils/i18n.js';
+import TayronaSellosBadge from './TayronaSellosBadge.astro';
 
 const { lang } = Astro.props;
 const t = getTranslations(lang);
@@ -9,6 +10,11 @@ const t = getTranslations(lang);
     <div class="footer-brand">
       <img src="/images/logo-kali-hotels-white.png" alt="Kali Hotels Logo" class="footer-logo" width="250" height="131" />
       <p class="footer-tagline">Three exclusive sanctuaries in the Colombian Caribbean.</p>
+      
+      <!-- Compact SEO Backlink Badge -->
+      <div class="footer-badge-wrapper">
+        <TayronaSellosBadge lang={lang} compact={true} />
+      </div>
     </div>
 
     <div class="footer-links">
@@ -56,7 +62,7 @@ const t = getTranslations(lang);
   .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .footer-logo {
@@ -70,6 +76,10 @@ const t = getTranslations(lang);
     color: var(--text-muted);
     font-size: 0.95rem;
     max-width: 320px;
+  }
+
+  .footer-badge-wrapper {
+    margin-top: 0.5rem;
   }
 
   .footer-heading {
