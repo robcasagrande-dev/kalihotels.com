@@ -54,6 +54,18 @@ const baseUrl = `https://kalihotels.com/${lang}/casa-isabella/`;
 const schema = [
   {
     "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.faq.isabella.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Hotel",
     "@id": baseUrl + "#hotel",
     "name": "Casa de Isabella",
@@ -172,6 +184,24 @@ const schema = [
   <section class="property-gallery container">
     <h2 class="section-title text-center mb-5">Gallery</h2>
     <Gallery images={galleryImages} />
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section container reveal-on-scroll">
+    <h2 class="faq-title text-center mb-5">{t.faq.title}</h2>
+    <div class="faq-accordion">
+      {t.faq.isabella.map((item, idx) => (
+        <details class="faq-item glass" name="faq-accordion">
+          <summary class="faq-question">
+            {item.q}
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{item.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
   </section>
 
   <!-- Contact & Info -->

@@ -130,5 +130,65 @@
     "copy_aria": "Code kopieren",
     "error_server": "Serverfehler. Bitte versuche es erneut.",
     "error_connection": "Verbindungsfehler. Bitte versuche es erneut."
+  },
+  "seo_overview": {
+    "title": "Santa Marta at a Glance",
+    "p1": "Santa Marta is one of Colombia's greatest jewels, offering a unique blend of colonial history, vibrant city life, and the breathtaking nature of Tayrona National Natural Park. Kali Hotels offers you the perfect opportunity to experience the best of both worlds.",
+    "p2": "In the Historic Center, Casa de Leda and Casa de Isabella provide a luxury boutique sanctuary with spas, rooftop pools, and unmatched colonial charm, just steps away from top dining and nightlife. For those seeking a deep connection with nature, Villa Maria Tayrona is our award-winning eco-lodge situated at the gates of Tayrona Park, where exceptional comfort meets the lush rainforest and panoramic views of the Caribbean Sea."
+  },
+  "funnel": {
+    "title": "Your Perfect Itinerary",
+    "desc": "We recommend splitting your stay: 3 nights in the Historic Center to absorb the culture and gastronomy, followed by 3 nights at Villa Maria to explore Tayrona Park and unwind in the jungle."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "home": [
+      {
+        "q": "What are the best hotels in Santa Marta?",
+        "a": "The top luxury boutique hotels in Santa Marta are Casa de Leda and Casa de Isabella in the Historic Center, and Villa Maria Tayrona near Tayrona National Park."
+      },
+      {
+        "q": "Where to stay near Tayrona National Park?",
+        "a": "Villa Maria Tayrona by Kali Hotels is the premier 5-star eco-lodge located just 3 km from the main entrance of Tayrona National Park, offering ocean views and jungle luxury."
+      }
+    ],
+    "leda": [
+      {
+        "q": "Does Casa de Leda have a pool?",
+        "a": "Yes, Casa de Leda features a beautiful rooftop pool with a bar, as well as a unique subterranean Roman spa."
+      },
+      {
+        "q": "Is Casa de Leda in the historic center?",
+        "a": "Yes, we are located right in the heart of Santa Marta's Historic Center, within walking distance of Parque de los Novios."
+      }
+    ],
+    "isabella": [
+      {
+        "q": "Does Casa de Isabella have a pool?",
+        "a": "Casa de Isabella features a refreshing plunge pool in a beautiful colonial courtyard, as well as a private pool in select rooms."
+      },
+      {
+        "q": "Can you walk to restaurants?",
+        "a": "Absolutely. We are just one block away from the best restaurants and nightlife in Santa Marta."
+      }
+    ],
+    "maria": [
+      {
+        "q": "How far is Villa Maria from Tayrona Park?",
+        "a": "Villa Maria Tayrona is located just 3 kilometers from the main entrance (El Zaino) of Tayrona National Park."
+      },
+      {
+        "q": "Is there a restaurant at Villa Maria Tayrona?",
+        "a": "Yes, we have an excellent on-site restaurant so our guests don't have to drive to enjoy a world-class dinner."
+      }
+    ]
+  },
+  "location": {
+    "title": "How to get to our hotels",
+    "subtitle": "Transportation guide for Santa Marta and Tayrona Park",
+    "airport": "From the Airport (SMR) to the Historic Center",
+    "airport_desc": "The Simon Bolivar airport (SMR) is about 30-40 minutes from the center. We recommend booking a private transfer with us for a hassle-free arrival.",
+    "tayrona": "From Santa Marta to Villa Maria Tayrona",
+    "tayrona_desc": "Villa Maria is a 40-minute drive from Santa Marta on the road to Riohacha. We can arrange a private transfer or you can take the public bus heading to Tayrona Park."
   }
 }

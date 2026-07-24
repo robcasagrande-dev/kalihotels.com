@@ -111,28 +111,14 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": lang === 'es' ? "¿Cuáles son los mejores hoteles en Santa Marta?" : "What are the best hotels in Santa Marta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": lang === 'es' 
-              ? "Los mejores hoteles boutique de lujo en Santa Marta son Casa de Leda y Casa de Isabella en el Centro Histórico, y Villa María Tayrona junto al Parque Nacional Tayrona."
-              : "The top luxury boutique hotels in Santa Marta are Casa de Leda and Casa de Isabella in the Historic Center, and Villa Maria Tayrona near Tayrona National Park."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": lang === 'es' ? "¿Dónde alojarse cerca del Parque Nacional Tayrona?" : "Where to stay near Tayrona National Park?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": lang === 'es'
-              ? "Villa María Tayrona by Kali Hotels es el hotel de lujo #1 ubicado a solo 3 km de la entrada principal del Parque Tayrona, con vistas espectaculares al mar Caribe y a la selva."
-              : "Villa Maria Tayrona by Kali Hotels is the premier 5-star eco-lodge located just 3 km from the main entrance of Tayrona National Park, offering ocean views and jungle luxury."
-          }
+      "mainEntity": t.faq.home.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
         }
-      ]
+      }))
     }
   ]
 };
@@ -241,6 +227,41 @@ const schema = {
           <a href={`/${lang}/villa-maria/`} class="btn-ghost property-btn">{t.santuarios.explore}</a>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- SEO Overview Section -->
+  <section class="seo-overview-section container reveal-on-scroll">
+    <div class="seo-content glass">
+      <h2 class="seo-title">{t.seo_overview.title}</h2>
+      <p class="seo-text">{t.seo_overview.p1}</p>
+      <p class="seo-text">{t.seo_overview.p2}</p>
+    </div>
+  </section>
+
+  <!-- Funnel CTA Section -->
+  <section class="funnel-cta-section container reveal-on-scroll">
+    <div class="funnel-content">
+      <h2 class="funnel-title">{t.funnel.title}</h2>
+      <p class="funnel-text">{t.funnel.desc}</p>
+    </div>
+  </section>
+
+  <!-- Visible FAQ Section -->
+  <section class="faq-section container reveal-on-scroll">
+    <h2 class="faq-title text-center">{t.faq.title}</h2>
+    <div class="faq-accordion">
+      {t.faq.home.map((item, idx) => (
+        <details class="faq-item glass" name="faq-accordion">
+          <summary class="faq-question">
+            {item.q}
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{item.a}</p>
+          </div>
+        </details>
+      ))}
     </div>
   </section>
 
@@ -581,6 +602,85 @@ const schema = {
   .property-card:hover .property-btn {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* SEO Overview & Funnel */
+  .seo-overview-section, .funnel-cta-section, .faq-section {
+    padding: 6rem 0;
+  }
+
+  .seo-content {
+    padding: 4rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seo-title, .funnel-title, .faq-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+  }
+
+  .seo-text, .funnel-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .funnel-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* FAQ Accordion */
+  .faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Hide default arrow */
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-answer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    line-height: 1.6;
   }
 
   /* Booking Callout */

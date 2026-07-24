@@ -132,5 +132,65 @@
     "email_cta_link": "Envíanos la captura aquí",
     "error_server": "Error en el servidor. Por favor, intenta de nuevo.",
     "error_connection": "Error de conexión. Intente de nuevo."
+  },
+  "seo_overview": {
+    "title": "Santa Marta a Simple Vista",
+    "p1": "Santa Marta es una de las joyas de Colombia, ofreciendo una mezcla única de historia colonial, vibrante vida urbana y la imponente naturaleza del Parque Nacional Natural Tayrona. Kali Hotels le ofrece la oportunidad perfecta de experimentar lo mejor de ambos mundos.",
+    "p2": "En el Centro Histórico, Casa de Leda y Casa de Isabella ofrecen un refugio boutique de lujo con spas, piscinas en la azotea y un encanto colonial incomparable, a pasos de los mejores restaurantes y vida nocturna. Para aquellos que buscan una conexión profunda con la naturaleza, Villa María Tayrona es nuestro galardonado eco-lodge situado a las puertas del Parque Tayrona, donde el confort excepcional se encuentra con la exuberante selva tropical y las vistas panorámicas al Mar Caribe."
+  },
+  "funnel": {
+    "title": "Su Itinerario Perfecto",
+    "desc": "Recomendamos dividir su estadía: 3 noches en el Centro Histórico para absorber la cultura y la gastronomía, seguidas de 3 noches en Villa María para explorar el Parque Tayrona y relajarse en la selva."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "home": [
+      {
+        "q": "¿Cuáles son los mejores hoteles en Santa Marta?",
+        "a": "Los mejores hoteles boutique de lujo en Santa Marta son Casa de Leda y Casa de Isabella en el Centro Histórico, y Villa María Tayrona junto al Parque Nacional Tayrona."
+      },
+      {
+        "q": "¿Dónde alojarse cerca del Parque Nacional Tayrona?",
+        "a": "Villa María Tayrona by Kali Hotels es el hotel de lujo #1 ubicado a solo 3 km de la entrada principal del Parque Tayrona, con vistas espectaculares al mar Caribe y a la selva."
+      }
+    ],
+    "leda": [
+      {
+        "q": "¿Casa de Leda tiene piscina?",
+        "a": "Sí, Casa de Leda cuenta con una hermosa piscina en la azotea con un bar, además de un spa romano subterráneo."
+      },
+      {
+        "q": "¿Está Casa de Leda en el centro histórico?",
+        "a": "Sí, estamos ubicados en el corazón del Centro Histórico de Santa Marta, a poca distancia del Parque de los Novios."
+      }
+    ],
+    "isabella": [
+      {
+        "q": "¿Tiene Casa de Isabella piscina?",
+        "a": "Casa de Isabella cuenta con una refrescante piscina de inmersión en un hermoso patio colonial, así como piscina privada en habitaciones selectas."
+      },
+      {
+        "q": "¿Se puede ir caminando a restaurantes?",
+        "a": "Absolutamente. Estamos a una cuadra de los mejores restaurantes y la vida nocturna de Santa Marta."
+      }
+    ],
+    "maria": [
+      {
+        "q": "¿A qué distancia está Villa María del Parque Tayrona?",
+        "a": "Villa María Tayrona se encuentra a solo 3 kilómetros de la entrada principal (El Zaino) del Parque Nacional Tayrona."
+      },
+      {
+        "q": "¿Hay restaurante en Villa María Tayrona?",
+        "a": "Sí, contamos con un excelente restaurante en el lugar para que nuestros huéspedes no tengan que conducir para disfrutar de una cena de primera."
+      }
+    ]
+  },
+  "location": {
+    "title": "Cómo llegar a nuestros hoteles",
+    "subtitle": "Guía de transporte para Santa Marta y Parque Tayrona",
+    "airport": "Desde el Aeropuerto (SMR) hasta el Centro Histórico",
+    "airport_desc": "El aeropuerto Simón Bolívar (SMR) está a unos 30-40 minutos del centro. Recomendamos reservar un traslado privado con nosotros para una llegada sin complicaciones.",
+    "tayrona": "Desde Santa Marta hasta Villa María Tayrona",
+    "tayrona_desc": "Villa María está a 40 minutos en coche de Santa Marta por la vía a Riohacha (Troncal del Caribe). Podemos organizar un transporte privado o puede tomar el autobús público que se dirige al Parque Tayrona."
   }
 }
