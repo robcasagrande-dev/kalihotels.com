@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MobileStickyBooking from '../components/MobileStickyBooking.astro';
 import '../styles/global.css';
 
 const { 
@@ -109,6 +110,7 @@ const alternates = [
       <Header lang={lang} />
       <slot />
       <Footer lang={lang} />
+      <MobileStickyBooking lang={lang} />
     </div>
     <script>
       // Intersection Observer for scroll animations

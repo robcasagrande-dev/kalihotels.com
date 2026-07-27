@@ -1,0 +1,97 @@
+---
+import { getTranslations } from '../utils/i18n.js';
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<div class="mobile-sticky-bar glass" id="mobileStickyBar">
+  <div class="mobile-sticky-content">
+    <div class="mobile-sticky-badge">
+      <span class="pulse-dot"></span>
+      <span class="badge-text">{lang === 'es' ? 'Mejor Precio' : lang === 'it' ? 'Miglior Prezzo' : lang === 'fr' ? 'Meilleur Prix' : lang === 'de' ? 'Bester Preis' : 'Best Rate'}</span>
+    </div>
+    <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791" target="_blank" rel="noopener noreferrer" class="btn-gold mobile-sticky-btn">
+      {t.nav.book} <span class="discount-pill">-10%</span>
+    </a>
+  </div>
+</div>
+
+<style>
+  .mobile-sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 0.75rem 1.25rem;
+    background: rgba(11, 12, 16, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-sticky-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .mobile-sticky-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #25D366;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  .badge-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted, #a0a5b5);
+  }
+
+  .mobile-sticky-btn {
+    padding: 0.6rem 1.4rem !important;
+    font-size: 0.85rem !important;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .discount-pill {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .mobile-sticky-bar {
+      display: block;
+    }
+  }
+</style>
