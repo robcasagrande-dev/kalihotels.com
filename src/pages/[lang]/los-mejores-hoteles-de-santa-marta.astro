@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PriceGuarantee from '../../components/PriceGuarantee.astro';
 import BookingWidget from '../../components/BookingWidget.astro';
+import PriceGuarantee from '../../components/PriceGuarantee.astro';
 import { getTranslations, LANGUAGES } from '../../utils/i18n.js';
 
 export function getStaticPaths() {
@@ -106,69 +106,69 @@ const schema = [
 
 const content = {
   es: {
-    hero_tag: "GUÍA OFICIAL 2026",
-    hero_title: "Los 3 Mejores Hoteles en Santa Marta y Parque Tayrona",
-    hero_sub: "Comparativa de los mejores hoteles boutique de lujo en el Centro Histórico y bungalows privados frente al mar en Tayrona.",
-    leda_badge: "#1 Hotel Boutique con Spa en el Centro Histórico",
-    isabella_badge: "#1 Hotel Boutique Colonial con Piscina Privada",
-    maria_badge: "#1 Resort de Bungalows de Lujo en Parque Tayrona",
-    view_details: "Ver Habitaciones y Detalles",
-    book_direct: "Reservar Directo (-10% Descuento)",
-    why_book: "¿Por qué reservar con Kali Hotels?",
-    why_p1: "Ya sea que busques el ambiente colonial y la gastronomía vibrante del Centro Histórico de Santa Marta o la paz absoluta de la selva tropical del Parque Tayrona, Kali Hotels ofrece los tres santuarios mejor valorados de la región.",
-    why_p2: "Disfruta de beneficios exclusivos al reservar directo: 10% de descuento garantizado, upgrade de habitación sujeto a disponibilidad y cóctel de bienvenida gratis."
+    hero_tag: "GUÍA DE LUJO 2026",
+    hero_title: "Los 3 Mejores Hoteles en Santa Marta y Tayrona",
+    hero_sub: "Comparativa exclusiva de los mejores hoteles boutique de lujo en el Centro Histórico y bungalows privados frente al mar Caribe.",
+    leda_badge: "#1 Spa Subterráneo Romano & Rooftop Pool",
+    isabella_badge: "#1 Hotel Colonial con Piscina Privada",
+    maria_badge: "#1 Bungalows de Eco-Lujo frente al Mar",
+    view_details: "Explorar Santuario",
+    book_direct: "Reservar con 10% Descuento",
+    why_book: "¿Por qué alojarse en un Santuario Kali Hotels?",
+    why_p1: "Ya sea que busques el encanto colonial y la alta gastronomía del Centro Histórico de Santa Marta o la serenidad de la selva tropical del Parque Tayrona, Kali Hotels ofrece los tres santuarios boutique mejor valorados de Colombia.",
+    why_p2: "Disfruta de beneficios exclusivos al reservar directo: 10% de descuento garantizado con el código SDBOOK, cóctel de bienvenida artesanal y upgrade de habitación sujeto a disponibilidad."
   },
   en: {
-    hero_tag: "OFFICIAL 2026 GUIDE",
-    hero_title: "Top 3 Best Hotels in Santa Marta & Tayrona National Park",
-    hero_sub: "A curated comparison of top luxury boutique hotels in the Historic Center and private ocean-view bungalows in Tayrona.",
-    leda_badge: "#1 Luxury Spa Boutique Hotel in Historic Center",
-    isabella_badge: "#1 Colonial Boutique Hotel with Private Plunge Pools",
-    maria_badge: "#1 Luxury Jungle Bungalows Resort at Tayrona Park",
-    view_details: "View Rooms & Details",
-    book_direct: "Book Direct (10% Off)",
-    why_book: "Why Stay with Kali Hotels?",
-    why_p1: "Whether you seek the colonial charm and dining scene of Santa Marta's Historic Center or the untouched serenity of Tayrona National Park's rainforest, Kali Hotels features the region's top three rated boutique sanctuaries.",
-    why_p2: "Enjoy exclusive perks when booking direct: guaranteed 10% discount, complimentary welcome cocktail, and priority room upgrades."
+    hero_tag: "LUXURY GUIDE 2026",
+    hero_title: "Top 3 Best Luxury Hotels in Santa Marta & Tayrona",
+    hero_sub: "An exclusive comparison of top luxury boutique hotels in the Historic Center and private ocean-view bungalows near Tayrona National Park.",
+    leda_badge: "#1 Subterranean Roman Spa & Rooftop Pool",
+    isabella_badge: "#1 Colonial Boutique Hotel with Private Pools",
+    maria_badge: "#1 Luxury Ocean & Jungle Eco-Bungalows",
+    view_details: "Explore Sanctuary",
+    book_direct: "Book Direct with 10% Off",
+    why_book: "Why Stay at a Kali Hotels Sanctuary?",
+    why_p1: "Whether you seek the colonial heritage and dining scene of Santa Marta's Historic Center or the untouched rainforest of Tayrona National Park, Kali Hotels features the region's top three luxury sanctuaries.",
+    why_p2: "Enjoy exclusive perks when booking direct: guaranteed 10% discount using code SDBOOK, complimentary welcome cocktail, and priority room upgrades."
   },
   de: {
-    hero_tag: "OFFIZIELLER GUIDE 2026",
-    hero_title: "Die 3 besten Hotels in Santa Marta & Tayrona Nationalpark",
-    hero_sub: "Ein Vergleich der besten Luxus-Boutique-Hotels in der Altstadt und privaten Dschungel-Bungalows am Tayrona Park.",
-    leda_badge: "#1 Luxus-Spa-Boutique-Hotel in der Altstadt",
-    isabella_badge: "#1 Koloniales Boutique-Hotel mit privatem Pool",
-    maria_badge: "#1 Luxus-Dschungel-Bungalows am Tayrona Park",
-    view_details: "Zimmer & Details ansehen",
+    hero_tag: "LUXUS GUIDE 2026",
+    hero_title: "Die 3 besten Luxushotels in Santa Marta & Tayrona",
+    hero_sub: "Ein exklusiver Vergleich der besten Boutique-Hotels in der Altstadt und privaten Dschungel-Bungalows am Tayrona Park.",
+    leda_badge: "#1 Römisches Spa & Rooftop-Pool",
+    isabella_badge: "#1 Koloniales Luxus-Hotel mit privatem Pool",
+    maria_badge: "#1 Luxus-Bungalows am Tayrona Park",
+    view_details: "Details Ansehen",
     book_direct: "Direkt buchen (10% Rabatt)",
     why_book: "Warum bei Kali Hotels buchen?",
     why_p1: "Egal ob Sie kolonialen Charme in der Altstadt von Santa Marta oder Natur am Tayrona-Nationalpark suchen, Kali Hotels bietet die drei am besten bewerteten Refugien der Region.",
-    why_p2: "Genießen Sie exklusive Vorteile bei Direktbuchung: 10% Rabatt, Begrüßungscocktail und bevorzugtes Zimmer-Upgrade."
+    why_p2: "Genießen Sie exklusive Vorteile bei Direktbuchung: 10% Rabatt mit Code SDBOOK, Begrüßungscocktail und bevorzugtes Zimmer-Upgrade."
   },
   fr: {
-    hero_tag: "GUIDE OFFICIEL 2026",
-    hero_title: "Les 3 Meilleurs Hôtels à Santa Marta & Parc Tayrona",
-    hero_sub: "Comparatif des meilleurs hôtels boutique de luxe dans le Centre Historique et bungalows privés au Parc Tayrona.",
-    leda_badge: "#1 Hôtel Boutique de Luxe avec Spa au Centre Historique",
-    isabella_badge: "#1 Hôtel Boutique Colonial avec Bassin Privé",
-    maria_badge: "#1 Resort de Bungalows Éco-Luxe au Parc Tayrona",
-    view_details: "Voir les Chambres & Détails",
-    book_direct: "Réserver Directement (-10%)",
-    why_book: "Pourquoi Réserver avec Kali Hotels?",
+    hero_tag: "GUIDE DE LUXE 2026",
+    hero_title: "Les 3 Meilleurs Hôtels de Luxe à Santa Marta & Tayrona",
+    hero_sub: "Un comparatif exclusif des meilleurs hôtels boutique du Centre Historique et bungalows éco-luxe avec vue mer au Parc Tayrona.",
+    leda_badge: "#1 Spa Romain Souterrain & Rooftop Pool",
+    isabella_badge: "#1 Hôtel Colonial avec Bassin Privé",
+    maria_badge: "#1 Bungalows Éco-Luxe au Parc Tayrona",
+    view_details: "Explorer le Sanctuaires",
+    book_direct: "Réserver Direct (-10%)",
+    why_book: "Pourquoi Choisir un Sanctuaire Kali Hotels?",
     why_p1: "Que vous recherchiez le charme colonial de Santa Marta ou la sérénité du Parc National Tayrona, Kali Hotels propose les trois sanctuaires boutiques les mieux notés de la région.",
-    why_p2: "Profitez d'avantages exclusifs en réservant en direct: 10% de réduction garantie, cocktail de bienvenue offert et surclassement prioritaire."
+    why_p2: "Profitez d'avantages exclusifs en réservant en direct: 10% de réduction garantie avec le code SDBOOK, cocktail de bienvenue offert et surclassement prioritaire."
   },
   it: {
-    hero_tag: "GUIDA UFFICIALE 2026",
-    hero_title: "I 3 Migliori Hotel a Santa Marta e Parco Tayrona",
-    hero_sub: "Guida comparativa dei migliori boutique hotel di lusso nel Centro Storico e bungalow privati con vista mare al Parco Tayrona.",
-    leda_badge: "#1 Boutique Hotel con Spa nel Centro Storico",
+    hero_tag: "GUIDA DI LUSSO 2026",
+    hero_title: "I 3 Migliori Hotel di Lusso a Santa Marta e Tayrona",
+    hero_sub: "Confronto esclusivo dei migliori boutique hotel nel Centro Storico e bungalow privati con vista mare al Parco Tayrona.",
+    leda_badge: "#1 Spa Romana Sotterranea & Rooftop Pool",
     isabella_badge: "#1 Boutique Hotel Coloniale con Piscina Privata",
-    maria_badge: "#1 Resort di Bungalow di Lusso al Parco Tayrona",
-    view_details: "Vedi Camere e Dettagli",
+    maria_badge: "#1 Bungalow di Lusso al Parco Tayrona",
+    view_details: "Esplora Santuario",
     book_direct: "Prenota Diretto (10% Sconto)",
-    why_book: "Perché soggiornare con Kali Hotels?",
+    why_book: "Perché soggiornare nei Santuari Kali Hotels?",
     why_p1: "Che tu cerchi il fascino coloniale del Centro Storico di Santa Marta o la natura incontaminata del Parco Nazionale Tayrona, Kali Hotels offre i tre santuari boutique più votati della regione.",
-    why_p2: "Goditi vantaggi esclusivi prenotando direttamente: 10% di sconto garantito, cocktail di benvenuto e upgrade di camera."
+    why_p2: "Goditi vantaggi esclusivi prenotando direttamente: 10% di sconto garantito con codice SDBOOK, cocktail di benvenuto e upgrade di camera."
   }
 }[lang as 'es' | 'en' | 'de' | 'fr' | 'it'] || content['es'];
 ---
@@ -179,21 +179,24 @@ const content = {
   lang={lang} 
   schema={schema}
 >
-  <!-- Hero Section -->
-  <section class="guide-hero glass">
-    <div class="container text-center">
+  <!-- Luxury Hero Section with Background Backdrop -->
+  <section class="guide-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container text-center">
       <span class="guide-badge">{content.hero_tag}</span>
       <h1 class="guide-title">{content.hero_title}</h1>
       <p class="guide-subtitle">{content.hero_sub}</p>
     </div>
   </section>
 
-  <!-- Booking Widget Section -->
+  <!-- Live Booking Widget Container -->
   <section class="guide-booking-section container">
-    <BookingWidget lang={lang} />
+    <div class="booking-wrapper glass">
+      <BookingWidget lang={lang} />
+    </div>
   </section>
 
-  <!-- Main Hotels Comparison Section -->
+  <!-- Main Hotels Comparison Listicles Section -->
   <section class="hotels-list-section container">
     <!-- Hotel #1: Casa de Leda -->
     <article class="hotel-card glass reveal-on-scroll">
@@ -202,14 +205,15 @@ const content = {
         <img src="/images/casa-de-leda-03-1024x585.jpg" alt="Casa de Leda Roman Spa & Rooftop Pool" width="1024" height="585" loading="eager" fetchpriority="high" />
       </div>
       <div class="hotel-card-content">
+        <div class="rating-stars">★★★★★ <span class="rating-label">5.0 LUXURY RATING</span></div>
         <span class="hotel-category">{content.leda_badge}</span>
         <h2 class="hotel-name">Casa de Leda, a Kali Hotel</h2>
         <p class="hotel-location">📍 Centro Histórico, Santa Marta</p>
         <p class="hotel-desc">{t.santuarios.leda_desc}</p>
         <ul class="hotel-features">
-          <td>✔ Spa Romano Subterráneo Privado</td>
-          <td>✔ Piscina en la Azotea con Bar</td>
-          <td>✔ A 2 min del Parque de los Novios</td>
+          <li><span class="check-icon">✓</span> Spa Romano Subterráneo Privado</li>
+          <li><span class="check-icon">✓</span> Piscina en la Azotea con Bar & Vistas Panorama</li>
+          <li><span class="check-icon">✓</span> A 2 min del Parque de los Novios</li>
         </ul>
         <div class="hotel-card-actions">
           <a href={`/${lang}/casa-leda/`} class="btn-secondary">{content.view_details}</a>
@@ -219,20 +223,21 @@ const content = {
     </article>
 
     <!-- Hotel #2: Casa de Isabella -->
-    <article class="hotel-card glass reveal-on-scroll" style="transition-delay: 0.15s;">
+    <article class="hotel-card glass reveal-on-scroll">
       <div class="hotel-card-image">
         <span class="hotel-rank-badge">#2</span>
         <img src="/images/casa-isabella-01-33-683x1024.jpg" alt="Casa de Isabella Private Pool" width="683" height="1024" loading="lazy" />
       </div>
       <div class="hotel-card-content">
+        <div class="rating-stars">★★★★★ <span class="rating-label">5.0 LUXURY RATING</span></div>
         <span class="hotel-category">{content.isabella_badge}</span>
         <h2 class="hotel-name">Casa de Isabella, a Kali Hotel</h2>
         <p class="hotel-location">📍 Centro Histórico, Santa Marta</p>
         <p class="hotel-desc">{t.santuarios.isabella_desc}</p>
         <ul class="hotel-features">
-          <td>✔ Patio Colonial con Piscina de Inmersión</td>
-          <td>✔ Suites con Piscina Privada</td>
-          <td>✔ Cocina Gourmet & Desayunos Inclusivos</td>
+          <li><span class="check-icon">✓</span> Patio Colonial con Piscina de Inmersión</li>
+          <li><span class="check-icon">✓</span> Suites de Lujo con Piscina Privada</li>
+          <li><span class="check-icon">✓</span> Desayunos Gourmet Inclusivos</li>
         </ul>
         <div class="hotel-card-actions">
           <a href={`/${lang}/casa-isabella/`} class="btn-secondary">{content.view_details}</a>
@@ -242,20 +247,21 @@ const content = {
     </article>
 
     <!-- Hotel #3: Villa María Tayrona -->
-    <article class="hotel-card glass reveal-on-scroll" style="transition-delay: 0.3s;">
+    <article class="hotel-card glass reveal-on-scroll">
       <div class="hotel-card-image">
         <span class="hotel-rank-badge">#3</span>
         <img src="/images/VILLA-MARIA-DRONE-18-1.jpg" alt="Villa Maria Tayrona Ocean View Bungalows" width="600" height="800" loading="lazy" />
       </div>
       <div class="hotel-card-content">
+        <div class="rating-stars">★★★★★ <span class="rating-label">5.0 LUXURY RATING</span></div>
         <span class="hotel-category">{content.maria_badge}</span>
         <h2 class="hotel-name">Villa María Tayrona, a Kali Hotel</h2>
         <p class="hotel-location">📍 Parque Nacional Natural Tayrona (Km 35)</p>
         <p class="hotel-desc">{t.santuarios.maria_desc}</p>
         <ul class="hotel-features">
-          <td>✔ Bungalows de Lujo con Vistas al Mar y Selva</td>
-          <td>✔ Piscina Infinitu con Vistas a la Sierra Nevada</td>
-          <td>✔ A 3 km de la Entrada Principal El Zaino</td>
+          <li><span class="check-icon">✓</span> Bungalows de Lujo con Vistas al Mar y Selva</li>
+          <li><span class="check-icon">✓</span> Piscina Infinita sobre la Sierra Nevada</li>
+          <li><span class="check-icon">✓</span> A 3 km de la Entrada Principal El Zaino</li>
         </ul>
         <div class="hotel-card-actions">
           <a href={`/${lang}/villa-maria/`} class="btn-secondary">{content.view_details}</a>
@@ -263,6 +269,11 @@ const content = {
         </div>
       </div>
     </article>
+  </section>
+
+  <!-- Price Guarantee Discount Section -->
+  <section class="guarantee-section container">
+    <PriceGuarantee lang={lang} />
   </section>
 
   <!-- Authoritative Content Block -->
@@ -277,73 +288,106 @@ const content = {
 
 <style>
   .guide-hero {
-    padding: 7rem 1.5rem 3rem;
+    position: relative;
+    padding: 9rem 1.5rem 5rem;
     margin-top: 80px;
-    background: linear-gradient(180deg, rgba(11, 12, 16, 0.95) 0%, rgba(20, 24, 33, 0.98) 100%);
+    background-image: url('/images/VILLA-MARIA-DRONE-18-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-bottom: 1px solid var(--glass-border);
   }
 
-  .guide-booking-section {
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 8, 10, 0.75) 0%, rgba(11, 12, 16, 0.95) 100%);
+    z-index: 1;
+  }
+
+  .hero-container {
     position: relative;
-    z-index: 10;
+    z-index: 2;
+    max-width: 900px;
   }
 
   .guide-badge {
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid var(--color-accent);
-    color: var(--color-accent);
-    font-size: 0.8rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    color: #f3e5ab;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    border-radius: 20px;
-    margin-bottom: 1.25rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   }
 
   .guide-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
   }
 
   .guide-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    max-width: 820px;
     margin: 0 auto;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .guide-booking-section {
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .booking-wrapper {
+    padding: 1rem;
+    border-radius: 16px;
+    background: rgba(15, 18, 25, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 
   .hotels-list-section {
-    padding: 4rem 1.5rem;
+    padding: 2rem 1.5rem 4rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 3.5rem;
   }
 
   .hotel-card {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 2rem;
-    border-radius: 16px;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    border-radius: 20px;
     overflow: hidden;
-    background: rgba(20, 24, 33, 0.6);
+    background: rgba(20, 24, 33, 0.75);
     border: 1px solid var(--glass-border);
     transition: var(--transition-smooth);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
   .hotel-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-accent);
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
   }
 
   .hotel-card-image {
     position: relative;
     height: 100%;
-    min-height: 320px;
+    min-height: 360px;
   }
 
   .hotel-card-image img {
@@ -354,95 +398,159 @@ const content = {
 
   .hotel-rank-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 48px;
-    height: 48px;
-    background: var(--color-accent);
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
     color: #000;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
   }
 
   .hotel-card-content {
-    padding: 2.5rem 2rem 2.5rem 0;
+    padding: 2.5rem 2.5rem 2.5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
+  .rating-stars {
+    color: #d4af37;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.4rem;
+
+  }
+
+  .rating-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-left: 0.5rem;
+  }
+
   .hotel-category {
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--color-accent);
+    color: #d4af37;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.6rem;
   }
 
   .hotel-name {
-    font-size: 1.8rem;
-    color: #fff;
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 700;
     margin-bottom: 0.4rem;
   }
 
   .hotel-location {
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: #94a3b8;
     margin-bottom: 1rem;
   }
 
   .hotel-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #d1d5db;
-    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
   }
 
   .hotel-features {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+  }
+
+  .check-icon {
+    color: #d4af37;
+    font-weight: 800;
+    margin-right: 0.5rem;
   }
 
   .hotel-card-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
   }
 
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000000;
+    background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 100%);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: var(--transition-fast);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  }
+
+  .guarantee-section {
+    padding: 2rem 1.5rem 4rem;
+  }
+
   .guide-content-section {
-    padding: 0 1.5rem 5rem;
+    padding: 0 1.5rem 6rem;
   }
 
   .guide-content-card {
-    padding: 3rem;
-    border-radius: 16px;
-    background: rgba(20, 24, 33, 0.6);
+    padding: 3.5rem;
+    border-radius: 20px;
+    background: rgba(20, 24, 33, 0.75);
     border: 1px solid var(--glass-border);
   }
 
   .guide-content-card h2 {
-    font-size: 1.8rem;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 1.25rem;
   }
 
   .guide-content-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: #cbd5e1;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   @media (max-width: 900px) {
@@ -450,7 +558,10 @@ const content = {
       grid-template-columns: 1fr;
     }
     .hotel-card-content {
-      padding: 1.5rem 1.5rem 2rem;
+      padding: 1.75rem 1.75rem 2.25rem;
+    }
+    .guide-hero {
+      padding: 7rem 1.25rem 4rem;
     }
   }
 </style>
