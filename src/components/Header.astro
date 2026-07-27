@@ -217,13 +217,15 @@ const t = getTranslations(lang);
 
   .mobile-nav {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 80px;
     left: 0;
     width: 100%;
     border-top: none;
     border-bottom: 1px solid var(--glass-border);
-    background: rgba(11, 12, 16, 0.95);
+    background: #0b0c10 !important;
+    backdrop-filter: blur(20px);
+    z-index: 1001;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
