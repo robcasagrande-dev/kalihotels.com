@@ -1,0 +1,25 @@
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. Force HTTPS
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http
+  RewriteRule ^ https://kalihotels.com%{REQUEST_URI} [L,R=301]
+
+  # 2. Force Non-WWW (kalihotels.com)
+  RewriteCond %{HTTP_HOST} ^www\.kalihotels\.com$ [NC]
+  RewriteRule ^ https://kalihotels.com%{REQUEST_URI} [L,R=301]
+
+  # 3. Legacy WordPress & Obsolete File Purge (Return 410 Gone)
+  RewriteCond %{REQUEST_URI} ^/wp-(content|includes|admin|json|login|config) [NC,OR]
+  RewriteCond %{REQUEST_URI} \.php$ [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/(author|category|tag|feed|comments|trackback) [NC]
+  RewriteRule ^ - [G,L]
+</IfModule>
+
+# Security Headers & Canonical Enforcement
+<IfModule mod_headers.c>
+  # Enforce HTTP Strict Transport Security (HSTS)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+</IfModule>

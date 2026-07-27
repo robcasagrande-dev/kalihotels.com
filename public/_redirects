@@ -1,1 +1,18 @@
+# Canonical Protocol & Hostname Redirects (HTTP / WWW to HTTPS Non-WWW)
+http://kalihotels.com/* https://kalihotels.com/:splat 301!
+http://www.kalihotels.com/* https://kalihotels.com/:splat 301!
+https://www.kalihotels.com/* https://kalihotels.com/:splat 301!
+
+# Legacy WordPress Endpoints (410 Gone)
+/wp-content/* 410
+/wp-includes/* 410
+/wp-admin/* 410
+/wp-json/* 410
+/wp-login.php 410
+/*.php 410
+/author/* 410
+/category/* 410
+/feed/* 410
+
+# Language Default Redirect
 / /es/ 301
