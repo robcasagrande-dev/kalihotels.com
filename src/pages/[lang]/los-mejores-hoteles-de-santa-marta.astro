@@ -188,9 +188,10 @@ const content = {
     </div>
   </section>
 
-  <!-- Best Price Guarantee & Booking -->
-  <PriceGuarantee lang={lang} />
-  <BookingWidget lang={lang} />
+  <!-- Booking Widget Section -->
+  <section class="guide-booking-section container">
+    <BookingWidget lang={lang} />
+  </section>
 
   <!-- Main Hotels Comparison Section -->
   <section class="hotels-list-section container">
@@ -276,10 +277,17 @@ const content = {
 
 <style>
   .guide-hero {
-    padding: 6rem 1.5rem 4rem;
+    padding: 7rem 1.5rem 3rem;
     margin-top: 80px;
-    background: linear-gradient(180deg, rgba(11, 12, 16, 0.9) 0%, rgba(20, 24, 33, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(11, 12, 16, 0.95) 0%, rgba(20, 24, 33, 0.98) 100%);
     border-bottom: 1px solid var(--glass-border);
+  }
+
+  .guide-booking-section {
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
   }
 
   .guide-badge {
