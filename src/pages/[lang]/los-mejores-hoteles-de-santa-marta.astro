@@ -1,0 +1,448 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PriceGuarantee from '../../components/PriceGuarantee.astro';
+import BookingWidget from '../../components/BookingWidget.astro';
+import { getTranslations, LANGUAGES } from '../../utils/i18n.js';
+
+export function getStaticPaths() {
+  return LANGUAGES.map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+
+const baseUrl = `https://kalihotels.com/${lang}/los-mejores-hoteles-de-santa-marta/`;
+
+// Construct ItemList Schema for "Best Hotels in Santa Marta"
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": t.seo.best_hotels.title,
+    "description": t.seo.best_hotels.description,
+    "url": baseUrl,
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Hotel",
+          "name": "Casa de Leda, a Kali Hotel",
+          "description": "Best luxury boutique hotel with subterranean Roman spa and rooftop pool in Santa Marta Historic Center.",
+          "url": `https://kalihotels.com/${lang}/casa-leda/`,
+          "image": "https://kalihotels.com/images/casa-de-leda-03-1024x585.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 15 # 4-65",
+            "addressLocality": "Santa Marta",
+            "addressRegion": "Magdalena",
+            "addressCountry": "CO"
+          },
+          "starRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Hotel",
+          "name": "Casa de Isabella, a Kali Hotel",
+          "description": "Best luxury colonial boutique hotel with private plunge pools in Santa Marta Historic Center.",
+          "url": `https://kalihotels.com/${lang}/casa-isabella/`,
+          "image": "https://kalihotels.com/images/casa-isabella-01-33-683x1024.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 21 # 3-34",
+            "addressLocality": "Santa Marta",
+            "addressRegion": "Magdalena",
+            "addressCountry": "CO"
+          },
+          "starRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Hotel",
+          "name": "Villa María Tayrona, a Kali Hotel",
+          "description": "Best luxury eco-resort with ocean & jungle view bungalows next to Tayrona National Park entrance.",
+          "url": `https://kalihotels.com/${lang}/villa-maria/`,
+          "image": "https://kalihotels.com/images/VILLA-MARIA-DRONE-18-1.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Km 35 Vía Riohacha",
+            "addressLocality": "Santa Marta",
+            "addressRegion": "Magdalena",
+            "addressCountry": "CO"
+          },
+          "starRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.faq.home.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Kali Hotels", "item": `https://kalihotels.com/${lang}/` },
+      { "@type": "ListItem", "position": 2, "name": t.seo.best_hotels.title, "item": baseUrl }
+    ]
+  }
+];
+
+const content = {
+  es: {
+    hero_tag: "GUÍA OFICIAL 2026",
+    hero_title: "Los 3 Mejores Hoteles en Santa Marta y Parque Tayrona",
+    hero_sub: "Comparativa de los mejores hoteles boutique de lujo en el Centro Histórico y bungalows privados frente al mar en Tayrona.",
+    leda_badge: "#1 Hotel Boutique con Spa en el Centro Histórico",
+    isabella_badge: "#1 Hotel Boutique Colonial con Piscina Privada",
+    maria_badge: "#1 Resort de Bungalows de Lujo en Parque Tayrona",
+    view_details: "Ver Habitaciones y Detalles",
+    book_direct: "Reservar Directo (-10% Descuento)",
+    why_book: "¿Por qué reservar con Kali Hotels?",
+    why_p1: "Ya sea que busques el ambiente colonial y la gastronomía vibrante del Centro Histórico de Santa Marta o la paz absoluta de la selva tropical del Parque Tayrona, Kali Hotels ofrece los tres santuarios mejor valorados de la región.",
+    why_p2: "Disfruta de beneficios exclusivos al reservar directo: 10% de descuento garantizado, upgrade de habitación sujeto a disponibilidad y cóctel de bienvenida gratis."
+  },
+  en: {
+    hero_tag: "OFFICIAL 2026 GUIDE",
+    hero_title: "Top 3 Best Hotels in Santa Marta & Tayrona National Park",
+    hero_sub: "A curated comparison of top luxury boutique hotels in the Historic Center and private ocean-view bungalows in Tayrona.",
+    leda_badge: "#1 Luxury Spa Boutique Hotel in Historic Center",
+    isabella_badge: "#1 Colonial Boutique Hotel with Private Plunge Pools",
+    maria_badge: "#1 Luxury Jungle Bungalows Resort at Tayrona Park",
+    view_details: "View Rooms & Details",
+    book_direct: "Book Direct (10% Off)",
+    why_book: "Why Stay with Kali Hotels?",
+    why_p1: "Whether you seek the colonial charm and dining scene of Santa Marta's Historic Center or the untouched serenity of Tayrona National Park's rainforest, Kali Hotels features the region's top three rated boutique sanctuaries.",
+    why_p2: "Enjoy exclusive perks when booking direct: guaranteed 10% discount, complimentary welcome cocktail, and priority room upgrades."
+  },
+  de: {
+    hero_tag: "OFFIZIELLER GUIDE 2026",
+    hero_title: "Die 3 besten Hotels in Santa Marta & Tayrona Nationalpark",
+    hero_sub: "Ein Vergleich der besten Luxus-Boutique-Hotels in der Altstadt und privaten Dschungel-Bungalows am Tayrona Park.",
+    leda_badge: "#1 Luxus-Spa-Boutique-Hotel in der Altstadt",
+    isabella_badge: "#1 Koloniales Boutique-Hotel mit privatem Pool",
+    maria_badge: "#1 Luxus-Dschungel-Bungalows am Tayrona Park",
+    view_details: "Zimmer & Details ansehen",
+    book_direct: "Direkt buchen (10% Rabatt)",
+    why_book: "Warum bei Kali Hotels buchen?",
+    why_p1: "Egal ob Sie kolonialen Charme in der Altstadt von Santa Marta oder Natur am Tayrona-Nationalpark suchen, Kali Hotels bietet die drei am besten bewerteten Refugien der Region.",
+    why_p2: "Genießen Sie exklusive Vorteile bei Direktbuchung: 10% Rabatt, Begrüßungscocktail und bevorzugtes Zimmer-Upgrade."
+  },
+  fr: {
+    hero_tag: "GUIDE OFFICIEL 2026",
+    hero_title: "Les 3 Meilleurs Hôtels à Santa Marta & Parc Tayrona",
+    hero_sub: "Comparatif des meilleurs hôtels boutique de luxe dans le Centre Historique et bungalows privés au Parc Tayrona.",
+    leda_badge: "#1 Hôtel Boutique de Luxe avec Spa au Centre Historique",
+    isabella_badge: "#1 Hôtel Boutique Colonial avec Bassin Privé",
+    maria_badge: "#1 Resort de Bungalows Éco-Luxe au Parc Tayrona",
+    view_details: "Voir les Chambres & Détails",
+    book_direct: "Réserver Directement (-10%)",
+    why_book: "Pourquoi Réserver avec Kali Hotels?",
+    why_p1: "Que vous recherchiez le charme colonial de Santa Marta ou la sérénité du Parc National Tayrona, Kali Hotels propose les trois sanctuaires boutiques les mieux notés de la région.",
+    why_p2: "Profitez d'avantages exclusifs en réservant en direct: 10% de réduction garantie, cocktail de bienvenue offert et surclassement prioritaire."
+  },
+  it: {
+    hero_tag: "GUIDA UFFICIALE 2026",
+    hero_title: "I 3 Migliori Hotel a Santa Marta e Parco Tayrona",
+    hero_sub: "Guida comparativa dei migliori boutique hotel di lusso nel Centro Storico e bungalow privati con vista mare al Parco Tayrona.",
+    leda_badge: "#1 Boutique Hotel con Spa nel Centro Storico",
+    isabella_badge: "#1 Boutique Hotel Coloniale con Piscina Privata",
+    maria_badge: "#1 Resort di Bungalow di Lusso al Parco Tayrona",
+    view_details: "Vedi Camere e Dettagli",
+    book_direct: "Prenota Diretto (10% Sconto)",
+    why_book: "Perché soggiornare con Kali Hotels?",
+    why_p1: "Che tu cerchi il fascino coloniale del Centro Storico di Santa Marta o la natura incontaminata del Parco Nazionale Tayrona, Kali Hotels offre i tre santuari boutique più votati della regione.",
+    why_p2: "Goditi vantaggi esclusivi prenotando direttamente: 10% di sconto garantito, cocktail di benvenuto e upgrade di camera."
+  }
+}[lang as 'es' | 'en' | 'de' | 'fr' | 'it'] || content['es'];
+---
+
+<BaseLayout 
+  title={t.seo.best_hotels.title} 
+  description={t.seo.best_hotels.description} 
+  lang={lang} 
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="guide-hero glass">
+    <div class="container text-center">
+      <span class="guide-badge">{content.hero_tag}</span>
+      <h1 class="guide-title">{content.hero_title}</h1>
+      <p class="guide-subtitle">{content.hero_sub}</p>
+    </div>
+  </section>
+
+  <!-- Best Price Guarantee & Booking -->
+  <PriceGuarantee lang={lang} />
+  <BookingWidget lang={lang} />
+
+  <!-- Main Hotels Comparison Section -->
+  <section class="hotels-list-section container">
+    <!-- Hotel #1: Casa de Leda -->
+    <article class="hotel-card glass reveal-on-scroll">
+      <div class="hotel-card-image">
+        <span class="hotel-rank-badge">#1</span>
+        <img src="/images/casa-de-leda-03-1024x585.jpg" alt="Casa de Leda Roman Spa & Rooftop Pool" width="1024" height="585" loading="eager" fetchpriority="high" />
+      </div>
+      <div class="hotel-card-content">
+        <span class="hotel-category">{content.leda_badge}</span>
+        <h2 class="hotel-name">Casa de Leda, a Kali Hotel</h2>
+        <p class="hotel-location">📍 Centro Histórico, Santa Marta</p>
+        <p class="hotel-desc">{t.santuarios.leda_desc}</p>
+        <ul class="hotel-features">
+          <td>✔ Spa Romano Subterráneo Privado</td>
+          <td>✔ Piscina en la Azotea con Bar</td>
+          <td>✔ A 2 min del Parque de los Novios</td>
+        </ul>
+        <div class="hotel-card-actions">
+          <a href={`/${lang}/casa-leda/`} class="btn-secondary">{content.view_details}</a>
+          <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791" target="_blank" rel="noopener noreferrer" class="btn-gold">{content.book_direct}</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Hotel #2: Casa de Isabella -->
+    <article class="hotel-card glass reveal-on-scroll" style="transition-delay: 0.15s;">
+      <div class="hotel-card-image">
+        <span class="hotel-rank-badge">#2</span>
+        <img src="/images/casa-isabella-01-33-683x1024.jpg" alt="Casa de Isabella Private Pool" width="683" height="1024" loading="lazy" />
+      </div>
+      <div class="hotel-card-content">
+        <span class="hotel-category">{content.isabella_badge}</span>
+        <h2 class="hotel-name">Casa de Isabella, a Kali Hotel</h2>
+        <p class="hotel-location">📍 Centro Histórico, Santa Marta</p>
+        <p class="hotel-desc">{t.santuarios.isabella_desc}</p>
+        <ul class="hotel-features">
+          <td>✔ Patio Colonial con Piscina de Inmersión</td>
+          <td>✔ Suites con Piscina Privada</td>
+          <td>✔ Cocina Gourmet & Desayunos Inclusivos</td>
+        </ul>
+        <div class="hotel-card-actions">
+          <a href={`/${lang}/casa-isabella/`} class="btn-secondary">{content.view_details}</a>
+          <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791" target="_blank" rel="noopener noreferrer" class="btn-gold">{content.book_direct}</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Hotel #3: Villa María Tayrona -->
+    <article class="hotel-card glass reveal-on-scroll" style="transition-delay: 0.3s;">
+      <div class="hotel-card-image">
+        <span class="hotel-rank-badge">#3</span>
+        <img src="/images/VILLA-MARIA-DRONE-18-1.jpg" alt="Villa Maria Tayrona Ocean View Bungalows" width="600" height="800" loading="lazy" />
+      </div>
+      <div class="hotel-card-content">
+        <span class="hotel-category">{content.maria_badge}</span>
+        <h2 class="hotel-name">Villa María Tayrona, a Kali Hotel</h2>
+        <p class="hotel-location">📍 Parque Nacional Natural Tayrona (Km 35)</p>
+        <p class="hotel-desc">{t.santuarios.maria_desc}</p>
+        <ul class="hotel-features">
+          <td>✔ Bungalows de Lujo con Vistas al Mar y Selva</td>
+          <td>✔ Piscina Infinitu con Vistas a la Sierra Nevada</td>
+          <td>✔ A 3 km de la Entrada Principal El Zaino</td>
+        </ul>
+        <div class="hotel-card-actions">
+          <a href={`/${lang}/villa-maria/`} class="btn-secondary">{content.view_details}</a>
+          <a href="https://wubook.net/nneb/mprop?f=today&n=1&ep=4e454d97&w_id=4791" target="_blank" rel="noopener noreferrer" class="btn-gold">{content.book_direct}</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Authoritative Content Block -->
+  <section class="guide-content-section container">
+    <div class="guide-content-card glass reveal-on-scroll">
+      <h2>{content.why_book}</h2>
+      <p>{content.why_p1}</p>
+      <p>{content.why_p2}</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    padding: 6rem 1.5rem 4rem;
+    margin-top: 80px;
+    background: linear-gradient(180deg, rgba(11, 12, 16, 0.9) 0%, rgba(20, 24, 33, 0.95) 100%);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .guide-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hotels-list-section {
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .hotel-card {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(20, 24, 33, 0.6);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+  }
+
+  .hotel-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+  }
+
+  .hotel-card-image {
+    position: relative;
+    height: 100%;
+    min-height: 320px;
+  }
+
+  .hotel-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hotel-rank-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    height: 48px;
+    background: var(--color-accent);
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .hotel-card-content {
+    padding: 2.5rem 2rem 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hotel-category {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-name {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  .hotel-location {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .hotel-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin-bottom: 1.25rem;
+  }
+
+  .hotel-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .hotel-card-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .guide-content-section {
+    padding: 0 1.5rem 5rem;
+  }
+
+  .guide-content-card {
+    padding: 3rem;
+    border-radius: 16px;
+    background: rgba(20, 24, 33, 0.6);
+    border: 1px solid var(--glass-border);
+  }
+
+  .guide-content-card h2 {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .guide-content-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .hotel-card {
+      grid-template-columns: 1fr;
+    }
+    .hotel-card-content {
+      padding: 1.5rem 1.5rem 2rem;
+    }
+  }
+</style>
