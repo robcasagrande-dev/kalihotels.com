@@ -104,24 +104,24 @@
   },
   "seo": {
     "home": {
-      "title": "Kali Hotels | Boutiques Hôtels à Santa Marta & Parc National Tayrona",
-      "description": "Découvrez les Hôtels Kali à Santa Marta et Tayrona, Colombie. Trois sanctuaires boutiques de luxe exclusifs dans le Centre Historique et près du Parc National Tayrona."
+      "title": "Hôtels Santa Marta & Tayrona | Où Loger à Santa Marta — Kali Hotels",
+      "description": "Hôtels Santa Marta : Où loger à Santa Marta et au Parc Tayrona ? Découvrez les meilleurs hôtels boutique de luxe dans le Centre Historique (Casa de Leda et Casa de Isabella) et éco-lodges à Tayrona (Villa Maria)."
     },
     "villa_maria": {
-      "title": "Bungalows de Luxe à Santa Marta & Tayrona | Villa Maria — Kali Hotels",
-      "description": "Réservez des bungalows de luxe à Santa Marta et au Parc National Tayrona. Profitez de bungalows privés dans la jungle avec vue sur mer et piscine à la Villa Maria Tayrona by Kali Hotels."
+      "title": "Hotel Villa Maria Tayrona — Où Loger Près du Parc Tayrona | Kali Hotels",
+      "description": "Hotel Villa Maria Tayrona by Kali Hotels : Le meilleur éco-lodge de luxe où loger près du Parc National Tayrona avec bungalows privés dans la jungle et piscine."
     },
     "casa_leda": {
-      "title": "Boutique Hotel Santa Marta | Casa de Leda by Kali Hotels",
-      "description": "Séjournez à la Casa de Leda by Kali Hotels, un hôtel boutique de luxe dans le centre historique de Santa Marta avec spa romain souterrain et piscine."
+      "title": "Casa de Leda — Hôtel de Luxe avec Spa au Centre Historique de Santa Marta",
+      "description": "Casa de Leda Santa Marta : Où loger dans le centre historique de Santa Marta. Hôtel boutique de luxe avec spa romain souterrain, piscine sur le toit et vue sur la cathédrale."
     },
     "casa_isabella": {
-      "title": "Boutique Hotel Santa Marta | Casa de Isabella by Kali Hotels",
-      "description": "Réservez à la Casa de Isabella by Kali Hotels, un hôtel boutique colonial d'exception au coeur du centre historique de Santa Marta avec bassin profond privé."
+      "title": "Casa de Isabella — Hôtel Boutique Colonial avec Bassin Privé à Santa Marta",
+      "description": "Casa de Isabella Santa Marta : Le meilleur hôtel colonial où séjourner dans le centre historique avec bassin profond privé et service 5 étoiles."
     },
     "best_hotels": {
-      "title": "Les 3 Meilleurs Hôtels à Santa Marta & Parc Tayrona (Guide 2026)",
-      "description": "Vous cherchez les meilleurs hôtels à Santa Marta? Comparez les meilleurs hôtels boutique de luxe dans le Centre Historique et bungalows éco-luxe au Parc Tayrona. Réservez direct avec 10% de réduction."
+      "title": "Les Meilleurs Hôtels à Santa Marta & Parc Tayrona | Guide Où Loger 2026",
+      "description": "Quels sont les meilleurs hôtels à Santa Marta ? Guide complet pour savoir où dormir à Santa Marta : hôtels boutique de luxe au Centre Historique et bungalows au Parc Tayrona."
     }
   },
   "guarantee": {
@@ -136,24 +136,28 @@
     "error_connection": "Erreur de connexion. Veuillez réessayer."
   },
   "seo_overview": {
-    "title": "Santa Marta at a Glance",
-    "p1": "Santa Marta is one of Colombia's greatest jewels, offering a unique blend of colonial history, vibrant city life, and the breathtaking nature of Tayrona National Natural Park. Kali Hotels offers you the perfect opportunity to experience the best of both worlds.",
-    "p2": "In the Historic Center, Casa de Leda and Casa de Isabella provide a luxury boutique sanctuary with spas, rooftop pools, and unmatched colonial charm, just steps away from top dining and nightlife. For those seeking a deep connection with nature, Villa Maria Tayrona is our award-winning eco-lodge situated at the gates of Tayrona Park, where exceptional comfort meets the lush rainforest and panoramic views of the Caribbean Sea."
+    "title": "Santa Marta en un coup d'œil",
+    "p1": "Santa Marta est l'une des destinations les plus captivantes de Colombie. Si vous vous demandez où loger à Santa Marta ou quels sont les meilleurs hôtels de Santa Marta, Kali Hotels vous propose une collection d'exception alliant charme colonial et luxe naturel.",
+    "p2": "Dans le Centre Historique, Casa de Leda et Casa de Isabella offrent des séjours d'exception avec spas souterrains et bassins privés. Près des plages du Parc Tayrona, Villa Maria Tayrona est notre éco-lodge primé niché dans la jungle tropicale."
   },
   "funnel": {
-    "title": "Your Perfect Itinerary",
-    "desc": "We recommend splitting your stay: 3 nights in the Historic Center to absorb the culture and gastronomy, followed by 3 nights at Villa Maria to explore Tayrona Park and unwind in the jungle."
+    "title": "Votre itinéraire parfait",
+    "desc": "Nous vous recommandons de diviser votre séjour : 3 nuits dans le Centre Historique pour la culture et la gastronomie, suivies de 3 nuits à la Villa Maria pour explorer le Parc Tayrona."
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "Foire Aux Questions",
     "home": [
       {
-        "q": "What are the best hotels in Santa Marta?",
-        "a": "The top luxury boutique hotels in Santa Marta are Casa de Leda and Casa de Isabella in the Historic Center, and Villa Maria Tayrona near Tayrona National Park."
+        "q": "Où loger à Santa Marta ?",
+        "a": "Les deux meilleures zones où loger à Santa Marta sont le Centre Historique (idéal pour la culture et la gastronomie à Casa de Leda et Casa de Isabella) et la région du Parc National Tayrona (idéal pour la nature et la sérénité à Villa Maria Tayrona)."
       },
       {
-        "q": "Where to stay near Tayrona National Park?",
-        "a": "Villa Maria Tayrona by Kali Hotels is the premier 5-star eco-lodge located just 3 km from the main entrance of Tayrona National Park, offering ocean views and jungle luxury."
+        "q": "Quels sont les meilleurs hôtels à Santa Marta ?",
+        "a": "Les meilleurs hôtels boutique de luxe à Santa Marta sont la Casa de Leda (avec son spa romain souterrain) et la Casa de Isabella (avec bassins privés) au Centre Historique, ainsi que la Villa Maria Tayrona (éco-lodge de luxe dans la jungle)."
+      },
+      {
+        "q": "Où dormir près du Parc National Tayrona ?",
+        "a": "Villa Maria Tayrona by Kali Hotels est l'éco-lodge n°1 situé à seulement 3 km de l'entrée principale d'El Zaino du Parc Tayrona, offrant des bungalows privés et une vue panoramique sur la mer des Caraïbes."
       }
     ],
     "leda": [
