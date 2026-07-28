@@ -7,6 +7,7 @@ import '../styles/global.css';
 const { 
   title, 
   description = "Kali Hotels - Santa Marta & Tayrona", 
+  keywords = "kali hotels santa marta, hotel villa maria tayrona, casa de leda, casa de isabella, hotel boutique santa marta centro historico, hotel en parque tayrona, hotel con piscina en santa marta, hotel de lujo santa marta",
   lang = "es",
   ogImage = "/images/VILLA-MARIA-DRONE-18-1.jpg", // Note: callers should pass absolute URL
   ogType = "website",
@@ -64,6 +65,7 @@ const alternates = [
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
 
