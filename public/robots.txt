@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# Disallow Legacy WordPress Directories & Paths
-Disallow: /wp-content/
-Disallow: /wp-includes/
-Disallow: /wp-admin/
-Disallow: /wp-json/
-Disallow: /wp-login.php
-Disallow: /*.php$
-Disallow: /author/
-Disallow: /category/
-Disallow: /tag/
-Disallow: /feed/
-Disallow: /comments/
-Disallow: /trackback/
-
 Sitemap: https://kalihotels.com/sitemap-index.xml
